@@ -1,3 +1,15 @@
+TO DO:
+I. storyline class with queue
+  1. random storyline parts
+  2. text-based user interface
+    a. graphics
+  3. character class
+    a. inheritance 
+    b. other characters
+      i. random generation
+  4. mini text-based games
+    a. threads
+
 5/27/14: Ben & Anne
   -outlined development process
   -listed & classes to be created
