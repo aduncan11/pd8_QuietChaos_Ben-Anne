@@ -1,11 +1,7 @@
-public class StoryBit{
+public abstract class StoryBit{
 
-    public StoryBit(){
-    
 
-    }
-
-    public void run(Character c){
+    public abstract void run(Character c){
 	
     }
 
