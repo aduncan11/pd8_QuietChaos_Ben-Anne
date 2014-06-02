@@ -29,6 +29,11 @@ I. storyline class with queue
 -Updated Character
 -updated social story
 
-
-5/30/14 Bem & Anne
+5/31/14 Ben  Anne
 -Added working Scanners
+
+6/2/14: Ben
+  -implemented comparable in the Character class, for use of priority queue
+  
+  Anne
+  - incorporated scanner into social story & MADE IT WORK YAH 
