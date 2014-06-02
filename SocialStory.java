@@ -1,10 +1,18 @@
 public class SocialStory extends StoryBit{
 
     public void run(Character c){
+	int social=0;
 	System.out.println("Your friend Veronica needs help with a problem...");
-    }
-    
-}
+	System.out.println("Hey, " +c.getName()+" Can you help me out  with something?");
+	System.out.println("yes or no");
+	Scanner scan=new Scanner();
+	//var name input
+	if(input.equals("yes")){
+	    social++;
+	}
+	else if(input.equals("no")){
+	    social--;
+	}
 
 //We will clean this up
 
@@ -32,3 +40,5 @@ public class SocialStory extends StoryBit{
 	    _class = (scanner.nextLine()).trim();
 	    if ((_class.equals("0")) || (_class.equals("1")) || (_class.equals("2")) || (_class.equals("3"))) {input = true;} //is there a more efficient method to do this line?
 	}
+    }
+}
