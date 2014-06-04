@@ -11,11 +11,11 @@ public class Driver{
     public static void main(String[] Args){
 	//variables for the whole game:
 	LinkedList<StoryBit> story=new LinkedList<StoryBit>();
-	Character user=new Character();
+	UserCharacter user=new UserCharacter();
 
 	//construct the queue (this can later be made more elaborate):
-	for(int x=0;x<10;x++){
-	    StoryBit next=new StoryBit();
+	for(int x=0;x<1;x++){
+	    StoryBit next=new SocialStory();
 	    story.add(next);
 	}
 	
