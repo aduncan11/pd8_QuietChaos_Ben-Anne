@@ -61,6 +61,13 @@ public class UserCharacter extends Character{
 	_sleep = _sleep + 5; //Susceptible to change
     }
 
+    public void hangout() {
+	ComputerCharacter c = _friends.peek();
+	System.out.println ("You hang out with " + c.getName() + ".");
+	_socialLife = socialLife + 5; 
+	System.out.println ("You raised your social life by 5 points!");
+    }
+
     // ----------------------------------- Setter Methods
        public void makeFriend(ComputerCharacter c) {
 	_socialLife = _socialLife + c.getSocialLife();
