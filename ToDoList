@@ -10,3 +10,4 @@ I. storyline class with queue
   4. mini text-based games
     a. threads
 
+We also need a delay method for printing text. It's very useful and makes the final work much more presentable. 
