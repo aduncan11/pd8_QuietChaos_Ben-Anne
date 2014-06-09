@@ -33,6 +33,10 @@ SocialStory:
   
 SchoolStory:
   subject-related trivia questions
+  
+Math/History/English/Science Story: 
+  -Extend School Story.
+  -Holds the specific questions for each unique topic.
 
 DecisionStory:
   you choose what to do (socialize, sleep, or study) 
