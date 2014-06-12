@@ -32,14 +32,20 @@ public class Character{
     // ----------------------------------- Setter Methods
     public void setSocialLife (int i) {
 	_socialLife = _socialLife + i;
+	if(_socialLife<0) _socialLife=0;
+	if(_socialLife>5) _socialLife=5;
     }
 
     public void setSleep(int i) {
 	_sleep = _sleep + i;
+	if(_sleep<0) _sleep=0;
+	if(_sleep>10) _sleep=10;
     }
 
     public void setGrades(int i) {
 	_grades = _grades + i;
+	if(_grades<0) _grades=0;
+	if(_grades>4) _grades=4;
     }
 
     public void setGender (String s) {
