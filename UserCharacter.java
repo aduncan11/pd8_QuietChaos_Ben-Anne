@@ -69,11 +69,14 @@ public class UserCharacter extends Character{
     }
 
     // ----------------------------------- Setter Methods
-       public void makeFriend(ComputerCharacter c) {
+    public void makeFriend(ComputerCharacter c) {
 	_socialLife = _socialLife + c.getSocialLife();
 	_friends.add(c);
     }
-
+    
+    public void getTestScore(int x){
+    	super._grades=(super._grades+n)/2
+    }
 
     //---------------------------Acccesor Methods
     public ComputerCharacter getFriend() {
