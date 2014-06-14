@@ -26,7 +26,7 @@ public class MathStory extends SchoolStory {
 	answers.add(choices4);
 
 	questions.add("195 / 3");
-	String[] choices5={"65", "55", "75", "85"}
+	String[] choices5={"65", "55", "75", "85"};
 	answers.add(choices5);
 
 	key=new int[5];

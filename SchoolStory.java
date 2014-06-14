@@ -14,9 +14,12 @@ public class SchoolStory extends StoryBit {
 	//Can't think of if we need a specific constructor but here just in case
     }
 
-  System.out.println  
-    
 
+    public void run(UserCharacter user){
+
+	System.out.println();  
+    
+    }
 
 
 }
