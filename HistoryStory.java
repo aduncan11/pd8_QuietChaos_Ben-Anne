@@ -44,11 +44,11 @@ public class HistoryStory extends SchoolStory {
 	answers.add(choices10);
 
 	for(int x=0;x<questions.size();x++){
-	    int qnum=(int)math.random()*11;
-	    System.out.println(questions.get(qnum)+"\n");
+	    int qnum=(int)Math.random()*11;
+	    System.out.println(questions.get(qnum));
 	    for(int y=1;y<5;y++){
-		int answerNum=(int)math.random()*5;
-		System.out.println(y+". "+answers.get(answerNum)+"\n");
+		int answerNum=(int)Math.random()*5;
+		System.out.println(y+". "+answers.get(qnum)[answerNum]);
 		if(answerNum == 0) key[x]=y;
 	    }
 	    Scanner scan=new Scanner(System.in);
@@ -56,7 +56,9 @@ public class HistoryStory extends SchoolStory {
 	    while(!(input.equals("1")||input.equals("2")||input.equals("3")||input.equals("4"))){
 		input+=scan.nextLine().trim();
 	    }
-	    if(Integer.getInt(input)==key[x]) score++;
+	    if(Integer.parseInt(input)==key[x]) score++;
 	}
+
+	user.getTestScore(4*score/10);
     }
 }

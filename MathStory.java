@@ -1,105 +1,59 @@
 import java.io.*;
 import java.util.*;
+import java.lang.Math;
 
 public class MathStory extends SchoolStory {
 
     ArrayList<String> questions = new ArrayList<String>();
-    ArrayList<String> answers = new ArrayList<String>();
+    ArrayList<String[]> answers = new ArrayList<String[]>();
+    int[] key;
 
-    public SchoolStory(){
+    public MathStory(){
 	questions.add("15 * 3");
-	answers.add("45");
+	String[] choices1 = {"45", "30", "60", "75"};
+	answers.add(choices1);
 
 	questions.add("112 - 80");
-	answer.add("32");
+	String[] choices2={"32", "41", "30", "62"};
+	answers.add(choices2);
 
 	questions.add("Find x if (x-3)(x-2)(x)=0");
-	answers.add("All of the above");
+        String[] choices3={"All other choices", "2", "3", "0"};
+	answers.add(choices3);
 	
 	questions.add("If x=sqrt(87), then...");
-	answers.add("8 < x < 9");
+	String[] choices4={"8 < x < 9", "6 < x < 7", "5 < x < 6", "9 < x < 10"};
+	answers.add(choices4);
 
 	questions.add("195 / 3");
-	answers.add("65");
+	String[] choices5={"65", "55", "75", "85"}
+	answers.add(choices5);
+
+	key=new int[5];
 	
     }
 
     public void run(UserCharacter user){
-	score=0;
-
-	Random rand = new Random ();
-	int i = rand.nextInt(_testBank.size());
-	String s = testBank.get(i);
+	int score=0;
 	
-	System.out.println(user.getName()+", can you help me out with something?");
-	System.out.println("yes or no");
-	Scanner scan=new Scanner(System.in);
-	//var name input
-	String input="";
-	while(!(input.equals("yes"))&&(!(input.equals("no")))){
-	    input+=scan.nextLine().trim();
-	}
-	if(input.equals("yes")){
-	    
-	    System.out.println(questions[1]);
-	    System.out.prinln("1. 30");
-	    System.out.println("2. 60");
-	    System.out.prinln("3. "+answers[1]);
-	    System.out.println("Type 1, 2, or 3.");
-	    input="";
-	    while(!(input.equals("1") || input.equals("2") || input.equals("3"))){
-		input+=scan.nextLine().trim();
+	for(int x=0;x<5;x++){
+	    int randomQ=(int)Math.random()*6;
+	    System.out.println(answers.get(randomQ));
+	    for(int y=0;y<4;y++){
+		int randomA=(int)Math.random()*5;
+		System.out.println(randomA+". "+answers.get(randomQ)[randomA]);
+		if(randomA==1) key[x]=y;
 	    }
-	    if(input.equals("3")) score+=20;
 
-	    System.out.println(questions[2]);
-	    System.out.println("1. 41");
-	    System.out.println("2 "+answers[2]);
-	    System.out.println("3. 30");
-	    input="";
-	    while(!(input.equals("1") || input.equals("2") || input.equals("3"))){
-		input+=scan.nextLine().trim();
-	    }
-	    if(input.equals("2")) score+=20;
+	    Scanner scan=new Scanner(System.in);
+            String input="";
+            while(!(input.equals("1")||input.equals("2")||input.equals("3")||input.equals("4"))){
+                input+=scan.nextLine().trim();
+            }
+            if(Integer.parseInt(input)==key[x]) score++;
+        }
 
-	    System.out.println(questions[3]);
-	    System.out.println("1. 2");
-	    System.out.println("2. 3");
-	    System.out.println("3. 0");
-	    System.out.println("4. "+answers[3]);
-	    input="";
-	    while(!(input.equals("1") || input.equals("2") || input.equals("3") ||input.equals("4"))){
-		input+=scan.nextLine().trim();
-	    }
-	    if(input.equals("4")) score+=20;
-
-	    System.out.println(questions[4]);
-	    System.out.println("1. "+answers[4]);
-	    System.out.println("2. 6 < x < 7");
-	    System.out.println("3. 9 < x < 10");
-	    input="";
-	    while(!(input.equals("1") || input.equals("2") || input.equals("3"))){
-		input+=scan.nextLine().trim();
-	    }
-	    if(input.equals("1")) score+=20;
-
-	    System.out.println(questions[5]);
-	    System.out.prinln("1. "+answers[1]);
-	    System.out.println("2. 55");
-	    System.out.println("3. 75");
-	    input="";
-	    while(!(input.equals("1") || input.equals("2") || input.equals("3"))){
-		input+=scan.nextLine().trim();
-	    }
-	    if(input.equals("1")) score+=20;
-
-	    user.setGrades(score*4/100);
-	}
-	if(input.equals("no")){
-	    user.setSocial(-1);
-	}
-
-	
+	user.getTestScore(4*score/5);
     }
     
 }

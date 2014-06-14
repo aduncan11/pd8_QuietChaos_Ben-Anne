@@ -64,18 +64,19 @@ public class UserCharacter extends Character{
     public void hangout() {
 	ComputerCharacter c = _friends.peek();
 	System.out.println ("You hang out with " + c.getName() + ".");
-	_socialLife = socialLife + 5; 
+	super.setSocialLife(5); 
 	System.out.println ("You raised your social life by 5 points!");
     }
 
     // ----------------------------------- Setter Methods
     public void makeFriend(ComputerCharacter c) {
-	_socialLife = _socialLife + c.getSocialLife();
+	super.setSocialLife(c.getSocialLife());
 	_friends.add(c);
     }
     
     public void getTestScore(int x){
-    	super._grades=(super._grades+n)/2
+    	super._grades=(super._grades+x)/2;
+	System.out.println("Your average is now "+super._grades);
     }
 
     //---------------------------Acccesor Methods
