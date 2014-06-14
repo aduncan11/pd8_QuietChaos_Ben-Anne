@@ -10,7 +10,7 @@ public class HistoryStory extends SchoolStory {
 
     public HistoryStory(){
         questions = new ArrayList<String>();
-        answers = new ArrayList<ArrayListString>>>();
+        answers = new ArrayList();
         key = new int[10];
 
 	//QUESTIONS
@@ -28,9 +28,9 @@ public class HistoryStory extends SchoolStory {
 	//ANSWER 1
 	ArrayList<String> choices1 =new ArrayList<String>();
 	choices1.add("Washington");
-	choices.add("Jackson");
-	choices.add("Adams");
-	choices.add("Obama");
+	choices1.add("Jackson");
+	choices1.add("Adams");
+	choices1.add("Obama");
 	
 	answers.add(choices1);
 
@@ -40,14 +40,15 @@ public class HistoryStory extends SchoolStory {
 	choices2.add("Nixon");
 	choices2.add("Hoover");
 	choices2.add("Theodore Roosavelt");
+
 	answers.add(choices2);
 
 	//ANSWER 3
 	ArrayList<String> choices3=new ArrayList<String>();
-	choices.add("integration of schools");
-	choices.add("the spread of communism");
-	choices.add("The decentralization of banks");
-	choices.add("stricter regulation of federal government");
+	choices3.add("integration of schools");
+	choices3.add("the spread of communism");
+	choices3.add("The decentralization of banks");
+	choices3.add("stricter regulation of federal government");
 
 	answers.add(choices3);
 
@@ -123,7 +124,7 @@ public class HistoryStory extends SchoolStory {
 	    System.out.println(questions.get(qnum));
 	    for(int y=1;y<5;y++){
 		int answerNum=(int)Math.random()*5;
-		System.out.println(y+". "+answers.get(qnum)[answerNum]);
+		System.out.println(y+". "+answers.get(qnum).get(answerNum));
 		if(answerNum == 0) key[x]=y;
 		answers.get(qnum).remove(answerNum);
 	    }
