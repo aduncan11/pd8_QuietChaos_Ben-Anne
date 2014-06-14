@@ -43,5 +43,13 @@ DecisionStory:
   this should be more frequent in the queue
 
 MiniGames:
-  what are they? but they will be interspersed, and affect all stats. 
+  
+  1. Getting to class
+  -You will have to traverse a maze finder built into the terminal. You will have a specific amount of time to get to your destination. If you fail, bad things will happen.
+
+  2. Fencing
+  -You love fencing. You love it so much that you cannot stand to lose. You are a member of the Stuyvesant Fencing team, and as such, you fence all the time. Make sure to have quick reflexes for this one.
+
+  3. Dressing
+  -Everybody hates fashion, but the truth is, it's important to look nice. Every morning you have to pick out your attire for the day, but make sure you pick wisely! One wrong blunder and your social status will take a huge blow. 
   
