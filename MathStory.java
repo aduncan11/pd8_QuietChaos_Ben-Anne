@@ -63,9 +63,9 @@ public class MathStory extends SchoolStory {
 
 	ArrayList<String> choices5= new ArrayList<String>();
 	choices5.add("65");
-	choices.add("55");
-	choices.add("75");
-	choices.add("85");
+	choices5.add("55");
+	choices5.add("75");
+	choices5.add("85");
 
 	answers.add(choices5);
 
@@ -80,7 +80,7 @@ public class MathStory extends SchoolStory {
 	    int randomQ=(int)Math.random()*6;
 	    System.out.println(answers.get(randomQ));
 	    for(int y=0;y<4;y++){
-		int randomA=(int)Math.random()*5;
+		int randomA=(int)Math.random()*(answers.get(randomQ).size());
 		System.out.println(randomA+". "+answers.get(randomQ).get(randomA));
 		if(randomA==1) key[x]=y;
 		answers.get(randomQ).remove(randomA);

@@ -123,7 +123,7 @@ public class HistoryStory extends SchoolStory {
 	    int qnum=(int)Math.random()*11;
 	    System.out.println(questions.get(qnum));
 	    for(int y=1;y<5;y++){
-		int answerNum=(int)Math.random()*5;
+		int answerNum=(int)Math.random()*(answers.get(qnum).size());
 		System.out.println(y+". "+answers.get(qnum).get(answerNum));
 		if(answerNum == 0) key[x]=y;
 		answers.get(qnum).remove(answerNum);
