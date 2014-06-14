@@ -57,6 +57,8 @@ public class HistoryStory extends SchoolStory {
 		input+=scan.nextLine().trim();
 	    }
 	    if(Integer.parseInt(input)==key[x]) score++;
+	    questions.remove(qnum);
+	    answers.remove(qnum);
 	}
 
 	user.getTestScore(4*score/10);

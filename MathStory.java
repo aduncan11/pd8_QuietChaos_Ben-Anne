@@ -51,6 +51,8 @@ public class MathStory extends SchoolStory {
                 input+=scan.nextLine().trim();
             }
             if(Integer.parseInt(input)==key[x]) score++;
+	    questions.remove(randomQ);
+	    answers.remove(randomQ);
         }
 
 	user.getTestScore(4*score/5);
