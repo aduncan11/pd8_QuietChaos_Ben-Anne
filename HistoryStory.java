@@ -38,7 +38,7 @@ public class HistoryStory extends SchoolStory {
 	answers.add(choices1);
 
 	//ANSWER 2
-	String[] choices2={"FDR","Nixon","Hoover","Theodore Roosavelt"};
+	String[] choices2={"FDR","Nixon","Hoover","Theodore Roosevelt"};
 
 	answers.add(choices2);
 
