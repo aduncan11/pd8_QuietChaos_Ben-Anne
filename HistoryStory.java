@@ -5,12 +5,12 @@ import java.lang.Math;
 public class HistoryStory extends SchoolStory {
 
     ArrayList<String> questions;
-    ArrayList<ArrayList<String>> answers;
+    ArrayList<String[]> answers;
     int[] key;
 
     public HistoryStory(){
         questions = new ArrayList<String>();
-        answers = new ArrayList();
+        answers = new ArrayList<String[]>();
         key = new int[10];
 
 	//QUESTIONS
@@ -26,91 +26,51 @@ public class HistoryStory extends SchoolStory {
 	questions.add("The 1950's suburban growth promoted the growth of");
 
 	//ANSWER 1
-	ArrayList<String> choices1 =new ArrayList<String>();
-	choices1.add("Washington");
-	choices1.add("Jackson");
-	choices1.add("Adams");
-	choices1.add("Obama");
-	
+        String[] choices1 ={"Washington","Jackson","Adams","Obama"};
 	answers.add(choices1);
 
 	//ANSWER 2
-	ArrayList<String> choices2=new ArrayList<String>();
-	choices2.add("FDR");
-	choices2.add("Nixon");
-	choices2.add("Hoover");
-	choices2.add("Theodore Roosavelt");
+	String[] choices2={"FDR","Nixon","Hoover","Theodore Roosavelt"};
 
 	answers.add(choices2);
 
 	//ANSWER 3
-	ArrayList<String> choices3=new ArrayList<String>();
-	choices3.add("integration of schools");
-	choices3.add("the spread of communism");
-	choices3.add("The decentralization of banks");
-	choices3.add("stricter regulation of federal government");
+	String[] choices3={"integration of schools","the spread of communism","The decentralization of banks","stricter regulation of federal government"};
 
 	answers.add(choices3);
 
 	//ANSWER 4
-	ArrayList<String> choices4= new ArrayList<String>();
-	choices4.add("communist propoganda");
-	choices4.add("selling missile secrets to the Soviets");
-	choices4.add("fraud");
-	choices4.add("illegal monopolization of the media industry");
+	String[] choices4={"communist propoganda","selling missile secrets to the Soviets","fraud","illegal monopolization of the media industry"};
 
 	answers.add(choices4);
 
 	//ANSWER 5
-	ArrayList<String> choices5= new ArrayList<String>();
-	choices5.add("buying on credit");
-	choices5.add("the baby boom");
-	choices5.add("the success of farms");
-	choices5.add("increased importation from Germany");
+        String[] choices5= {"buying on credit","the baby boom","the success of farms","increased importation from Germany"};
 
 	answers.add(choices5);
 
 	//ANSWER 6
-	ArrayList choices6= new ArrayList<String>();
-	choices6.add("I, II, and III");
-	choices6.add("II");
-	choices6.add("I and II");
+        String[] choices6= {"I, II, and III","II","I and II", "III"};
 
 	answers.add(choices6);
 
 	//ANSWER 7
-	ArrayList<String> choices7= new ArrayList<String>();
-	choices7.add("it would drag America into another war");
-	choices7.add("it would antagonize the USSR");
-	choices7.add("Wilson had no points");
-	choices7.add("it would cause brinkmanship with Mexico");
+        String[] choices7= {"it would drag America into another war","it would antagonize the USSR","Wilson had no points","it would cause brinkmanship with Mexico"};
 
 	answers.add(choices7);
 
 	//ANSWER 8
-	ArrayList<String> choices8= new ArrayList<String>();
-	choices8.add("central banking");
-	choices8.add("private banks");
-	choices8.add("all banks");
-	choices8.add("Canada");
+        String[] choices8= {"central banking","private banks","all banks","Canada"};
 
 	answers.add(choices8);
 
 	//ANSWER 9
-	ArrayList<String> choices9=new ArrayList<String>();
-	choices9.add("a deeper economic recession");
-	choices9.add("inflation");
-	choices9.add("increased trade with Western Europe");
-	choices9.add("greater control over Cuba");
+        String[] choices9={"a deeper economic recession","inflation","increased trade with Western Europe","greater control over Cuba"};
 
 	answers.add(choices9);
 
 	//ANSWER 10
-	ArrayList<String> choices10=new ArrayList<String>();
-	choices10.add("the automobile industry");
-	choices10.add("city education");
-	choices10.add("public transportation");
-	choices10.add("the railroad");
+        String[] choices10={"the automobile industry","city education","public transportation","the railroad"};
 
 	answers.add(choices10);
 
@@ -123,10 +83,14 @@ public class HistoryStory extends SchoolStory {
 	    int qnum=(int)Math.random()*11;
 	    System.out.println(questions.get(qnum));
 	    for(int y=1;y<5;y++){
-		int answerNum=(int)Math.random()*(answers.get(qnum).size());
-		System.out.println(y+". "+answers.get(qnum).get(answerNum));
+		int answerNum=(int)Math.random()*(answers.get(qnum).length);
+		if(answers.get(qnum)[answerNum]==null){
+		    y--;
+		    break;
+		}
+		System.out.println(y+". "+answers.get(qnum)[answerNum]);
 		if(answerNum == 0) key[x]=y;
-		answers.get(qnum).remove(answerNum);
+		//answers.get(qnum).remove(answerNum);
 	    }
 	    Scanner scan=new Scanner(System.in);
 	    String input="";
