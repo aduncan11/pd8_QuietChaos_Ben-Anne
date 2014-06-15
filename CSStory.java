@@ -74,39 +74,23 @@ public class CSStory{
 
 	    System.out.println("You have 5 seconds.");
 
+	    long timeChange = 0;
+
 	    Scanner scan=new Scanner(System.in);
 	    String input="";
-	    while(!(input.equals("1")||input.equals("2")||input.equals("3")||input.equals("4")) && System.currentTimeMillis()-prevTime<5000){
+	    while(!(input.equals("1")||input.equals("2")||input.equals("3")||input.equals("4"))){
 		input+=scan.nextLine().trim();
-		currTime=System.currentTimeMillis();
-		// if(currTime-prevTime>990 && currTime-prevTime<1010){
-		//     if(currTime-prevTime>1990 && currTime-prevTime<2010){
-		// 	if(currTime-prevTime>2990 && currTime-prevTime<3010){
-		// 	    if(currTime-prevtime>3990 && currTime-prevTime<4010){
-		// 		if(currTime-prevTime>4990 && currTime-prevTime<5010){
-		// 		    System.out.println("1...");
-		// 		    break;
-		// 		}
-		// 		System.out.println("2...");
-		// 		break;
-		// 	    }
-		// 	    System.out.println("3...");
-		// 	    break;
-		// 	}
-		// 	System.out.println("4...");
-		// 	break;
-		//     }
-		//     System.out.println("5...");
-		//     break;
-		// }
+		timeChange =System.currentTimeMillis() - prevTime;
+		if (timeChange > 5000) {
+		    System.out.println("Time's up!");
+		    break;
+		}
 	    }
 	    
-	    if(currTime-prevTime<5000){
+	    if(timeChange<5000){
 		if(Integer.parseInt(input)==key[x]) score++;
 	    }
-	    else{
-		System.out.println("Time's up!");
-	    }
+
 	    answers.remove(randQ);
 	    questions.remove(randQ);
 	    

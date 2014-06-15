@@ -75,17 +75,19 @@ public class MathStory extends SchoolStory {
 
 	    Scanner scan=new Scanner(System.in);
             String input="";
-            while(!(input.equals("1")||input.equals("2")||input.equals("3")||input.equals("4")) && System.currentTimeMillis()-time<5000){
+            while(!(input.equals("1")||input.equals("2")||input.equals("3")||input.equals("4"))){
                 input+=scan.nextLine().trim();
 		change=System.currentTimeMillis()-time;
-            }
+		if (change > 5000) {
+		    System.out.println("Time's up!");
+		    break;
+		}
+	    }
 
             if(change<5000){
 		if(Integer.parseInt(input)==key[x]) score++;
 	    }	    
-	    else{
-		System.out.println("Time's up!");
-	    }
+	   
 	    questions.remove(randomQ);
 	    answers.remove(randomQ);
 	    
