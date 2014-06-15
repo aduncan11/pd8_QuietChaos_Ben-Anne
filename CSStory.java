@@ -66,6 +66,7 @@ public class CSStory{
 		    y--;
 		}
 		else{
+		    if(randA==0) key[x]=y;
 		    System.out.println(y+". "+answers.get(randQ)[randA]);
 		    answers.get(x)[randA]=null;
 		}
