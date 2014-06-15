@@ -30,9 +30,11 @@ public class Driver{
 
     public static void main(String[] Args){
 	//INTRO
+	 System.out.println(((char) 27)+"[2J"); 
+
 	System.out.println("Welcome to Surviving Stuyvesant High School! Ben and Anne here.");
 	delay();
-	System.out.println("We could as you for your name, but that can wait. For now we will call you Stan.");
+	System.out.println("We could ask you for your name, but that can wait. For now we will call you Stan.");
 	delay();
 	System.out.println("Well, Stan, we hear you are a student at Stuyvesant High School, and while you are an upperclassman taking classes like APCS, and attending glamorous galas like JProm, you are still a little confused on how to handle this whole... scool thing.");
 	delay();
@@ -55,14 +57,14 @@ public class Driver{
 
 	//construct the queue (this can later be made more elaborate):
 	for(int x=0;x<1;x++){
-	    StoryBit next=new SocialStory();
+	    StoryBit next=new SocialStory(user);
 	    story.add(next);
 	}
 	
 	//traverse through queue and run the story...
 	while(story.peek()!= null){
 	    StoryBit next=story.remove(); //get the next part of the story!
-	    next.run(user);//run that part with the user as the input character!
+	    next.run();//run that part with the user as the input character!
 	}
 	
 	System.out.println("Game over.");
