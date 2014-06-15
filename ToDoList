@@ -1,13 +1,9 @@
 TO DO:
-I. storyline class with queue
-  1. random storyline parts
-  2. text-based user interface
-    a. graphics
-  3. character class
-    a. inheritance
-    b. other characters
-      i. random generation
-  4. mini text-based games
-    a. threads
-
-We also need a delay method for printing text. It's very useful and makes the final work much more presentable. 
+- revamp the Driver to make everything go in sequence (& be pretty)
+- make parts of the storyline more random
+- develop the user decision aspect of the timeline
+- graphics/anything pretty
+- mini games
+- clearing screen
+- timed printing
+- timed responses affecting score
