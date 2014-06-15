@@ -55,7 +55,7 @@ public class MathStory extends SchoolStory {
 	int score=0;
 	
 	for(int x=0;x<5;x++){
-	    int randomQ=(int)Math.random()*6;
+	    int randomQ=(int)Math.random()*(questions.size());
 	    System.out.println(answers.get(randomQ));
 	    for(int y=0;y<4;y++){
 		int randomA=(int)Math.random()*(answers.get(randomQ).length);
