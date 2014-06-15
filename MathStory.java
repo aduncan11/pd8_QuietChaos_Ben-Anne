@@ -57,6 +57,7 @@ public class MathStory extends SchoolStory {
 	for(int x=0;x<5;x++){
 	    int randomQ=(int)Math.random()*(questions.size());
 	    System.out.println(answers.get(randomQ));
+	    delay();
 	    for(int y=0;y<4;y++){
 		int randomA=(int)Math.random()*(answers.get(randomQ).length);
 		if(answers.get(randomQ)[randomA]==null){
@@ -68,7 +69,10 @@ public class MathStory extends SchoolStory {
 		answers.get(randomQ)[randomA]=null;
 	    }
 
+	    System.out.println("1, 2, 3, or 4"+"\n");
+
 	    System.out.println("You have 5 seconds.");
+	    delay(0.5);
 
 	    time=System.currentTimeMillis();
 	    long change = 0;
@@ -80,6 +84,7 @@ public class MathStory extends SchoolStory {
 		change=System.currentTimeMillis()-time;
 		if (change > 5000) {
 		    System.out.println("Time's up!");
+		    delay();
 		    break;
 		}
 	    }
@@ -94,7 +99,11 @@ public class MathStory extends SchoolStory {
 	    System.out.print(ESC + "2J"); 
         }
 
+	System.out.println("Score received: "+100.0*score/5.0 );
+	delay();
+
 	user.getTestScore(4*score/5);
+	delay(5.0);
 
 	System.out.print(ESC + "2J"); 
     }

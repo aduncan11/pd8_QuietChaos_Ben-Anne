@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 import java.lang.Math;
 
-public class CSStory{
+public class CSStory extends SchoolStory{
 
     private ArrayList<String> questions;
     private ArrayList<String[]> answers;
@@ -56,9 +56,11 @@ public class CSStory{
 
 	for(int x=0;x<questions.size();x++){
 	    System.out.println(x+"/"+questions.size()+":");
+	    delay();
 
 	    int randQ=(int)Math.random()*questions.size();
 	    System.out.println(questions.get(randQ));
+	    delay();
 	    
 	    for(int y=0;y<4;y++){
 		int randA=(int)Math.random()*(answers.get(randQ).length);
@@ -68,14 +70,17 @@ public class CSStory{
 		else{
 		    if(randA==0) key[x]=y;
 		    System.out.println(y+". "+answers.get(randQ)[randA]);
+		    // super.delay();
 		    answers.get(x)[randA]=null;
 		}
+		System.out.println("1, 2, 3, or 4"+"\n");
 	    }
 	    
 	    prevTime=System.currentTimeMillis();
 
 	    System.out.println("You have 5 seconds.");
-
+	    super.delay(0.5);
+	    
 	    long timeChange = 0;
 
 	    Scanner scan=new Scanner(System.in);
@@ -97,14 +102,15 @@ public class CSStory{
 	    questions.remove(randQ);
 	    
 	    System.out.print(ESC + "2J"); 
+	    delay();
     
 	}
     
-	System.out.println("Score received: "+1.0*score/5.0);
+	System.out.println("Score received: "+100.0*score/5.0);
+	delay();
 
 	user.getTestScore(score*4/5);
-
-	System.out.print(ESC + "2J"); 
+	delay(5.0);
     }
 
 }

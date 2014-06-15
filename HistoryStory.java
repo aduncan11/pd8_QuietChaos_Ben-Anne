@@ -88,9 +88,11 @@ public class HistoryStory extends SchoolStory {
 
 	for(int x=0;x<questions.size();x++){
 	    System.out.println(x+"/"+questions.size()+":");
+	    delay();
 
-	    int qnum=(int)Math.random()*11;
+	    int qnum=(int)Math.random()*questions.size();
 	    System.out.println(questions.get(qnum));
+	    delay();
 	    for(int y=1;y<5;y++){
 		int answerNum=(int)Math.random()*(answers.get(qnum).length);
 		if(answers.get(qnum)[answerNum]==null){
@@ -98,12 +100,16 @@ public class HistoryStory extends SchoolStory {
 		    break;
 		}
 		System.out.println(y+". "+answers.get(qnum)[answerNum]);
+		delay();
 		if(answerNum == 0) key[x]=y;
 		answers.get(qnum)[answerNum]=null;
 	    }
+	    System.out.println("1, 2, 3, or 4" + "\n");
+	    
 	    time=System.currentTimeMillis();
 
 	    System.out.println("You have 5 seconds.");
+	    delay(0.5);
 
 	    Scanner scan=new Scanner(System.in);
 	    String input="";
@@ -113,6 +119,7 @@ public class HistoryStory extends SchoolStory {
 		timeChange=System.currentTimeMillis()-time;
 		if (timeChange > 5000) {
 		    System.out.println("Time's up!");
+		    delay();
 		    break;
 		}
 	    }
@@ -127,9 +134,11 @@ public class HistoryStory extends SchoolStory {
 	    System.out.print(ESC + "2J"); 
 	}
 
-	System.out.println("Score received: "+1.0*score/5.0);
+	System.out.println("Score received: "+100.0*score/5.0);
+	delay();
 
 	user.getTestScore(4*score/10);
+	delay(5.0);
 
 	System.out.print(ESC + "2J"); 
     }
