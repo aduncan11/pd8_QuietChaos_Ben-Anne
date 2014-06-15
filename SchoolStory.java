@@ -24,13 +24,47 @@ public class SchoolStory extends StoryBit {
 	//Can't think of if we need a specific constructor but here just in case
     }
 
-      public static void delay(int waitTime) {try {Thread.sleep (waitTime);} catch (Exception e) {}} 
+    public static void delay(double waitTime) {
+	  try {
+	      Thread.sleep ((int)waitTime*1000);
+	  } 
+	  catch (Exception e) {
+	  }
+      } 
 
-    public static void delay() {try {Thread.sleep (2000);} catch (Exception e) {}} 
+    public static void delay() {
+	try {
+	    Thread.sleep (2000);
+	} 
+	catch (Exception e) {
+	}
+    } 
 
     public void run(){
 
-	System.out.println();  
-    
+	SchoolStory nextClass;
+
+	System.out.println("You have gone to school. Which class would you like to attend? \n (math, history, or cs");  
+	//delay();
+	
+	Scanner scan = new Scanner(System.in);
+	String input="";
+	while(!(input.equals("history") || input.equals("math") || input.equals("cs"))){
+	    input+=scan.nextLine().trim();
+	}
+	if(input.equals("history")){
+	    nextClass=new HistoryStory(user);
+	}
+
+	else if(input.equals("cs")){
+	    nextClass=new CSStory(user);
+	}
+	
+	else{
+	    nextClass=new MathStory(user);
+	}
+	
+	nextClass.run();
+
     }
 }
