@@ -57,7 +57,7 @@ public class CSStory{
 	for(int x=0;x<questions.size();x++){
 	    System.out.println(x+"/"+questions.size()+":");
 
-	    int randQ=(int)Math.random()*5;
+	    int randQ=(int)Math.random()*questions.size();
 	    System.out.println(questions.get(randQ));
 	    
 	    for(int y=0;y<4;y++){
