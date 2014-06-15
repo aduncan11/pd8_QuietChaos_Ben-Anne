@@ -73,3 +73,5 @@
   - updated ToDo list.
   - added clear screen between stages in school & social stories
   - added timed answers to school stories
+  - added delays in printed lines
+  - added decision if statements in SchoolStory
