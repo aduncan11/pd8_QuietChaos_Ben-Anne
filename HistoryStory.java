@@ -104,7 +104,7 @@ public class HistoryStory extends SchoolStory {
 		if(answerNum == 0) key[x]=y;
 		answers.get(qnum)[answerNum]=null;
 	    }
-	    System.out.println("1, 2, 3, or 4" + "\n");
+	    System.out.println("(1, 2, 3, or 4)" + "\n");
 	    
 	    time=System.currentTimeMillis();
 

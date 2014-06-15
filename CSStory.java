@@ -73,7 +73,7 @@ public class CSStory extends SchoolStory{
 		    // super.delay();
 		    answers.get(x)[randA]=null;
 		}
-		System.out.println("1, 2, 3, or 4"+"\n");
+		System.out.println("(1, 2, 3, or 4)"+"\n");
 	    }
 	    
 	    prevTime=System.currentTimeMillis();

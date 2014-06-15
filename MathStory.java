@@ -69,7 +69,7 @@ public class MathStory extends SchoolStory {
 		answers.get(randomQ)[randomA]=null;
 	    }
 
-	    System.out.println("1, 2, 3, or 4"+"\n");
+	    System.out.println("(1, 2, 3, or 4)"+"\n");
 
 	    System.out.println("You have 5 seconds.");
 	    delay(0.5);

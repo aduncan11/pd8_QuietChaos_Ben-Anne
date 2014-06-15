@@ -20,24 +20,27 @@ public class UserCharacter extends Character{
     
 	super.setName (input);
 
-	System.out.println ("What is your gender?   (male or female - CAPS MATTER)");
+	System.out.println ("What is your gender?   (male or female");
 	input = "";
 	while ((!input.equals("male")) || (!input.equals ("female"))) {
 	    input += scan.nextLine().trim();
 	}
+	delay(0.5);
 	    super.setGender(input);
     
 	_loveInterest = null;
 	_friends = new PriorityQueue <ComputerCharacter> ();
 
 	System.out.println ("Students at this school have three main characteristics that they try to balance - Their social status, their grades, and how much sleep they can get. Jocks have very good social status but bad grades. Nerds have good grades but bad social skills. Narcoleptics have a lot of sleep but bad social status.");
+	delay();
 
-	System.out.println ("What is your status as a student? - Type (0) for Jock, (1) for Nerd, and (2) for Narcoleptic");
+	System.out.println ("What is your status as a student? \n Type (0) for Jock, (1) for Nerd, and (2) for Narcoleptic");
 
 	input = "";
 	while ((!input.equals ("1")) || (!input.equals ("2")) || (!input.equals ("3"))) {
 	    input += scan.nextLine().trim();
 	}
+	delay(0.5);
 	    if (input.equals ("0")) {
 		super._grades = 1;
 		super._socialLife = 5;  
@@ -57,9 +60,13 @@ public class UserCharacter extends Character{
 	    }
 
 	    System.out.println("Starting Stats:");
+	    delay(1.0);
 	    System.out.println("Grades: " + super._grades +" out of 4.0");
+	    delay(1.0);
 	    System.out.println("Social Life: "+super._socialLife+" out of 5");
+	    delay(1.0);
 	    System.out.println("Sleep Acquired: "+super._sleep+" out of 10 hours");
+	    delay(5.0);
 
 	    final String ESC = "\033[";
 	    System.out.print(ESC + "2J");
@@ -94,4 +101,25 @@ public class UserCharacter extends Character{
     public ComputerCharacter getFriend() {
 	return _friends.peek();
     }
+
+
+    //------------------------------- Delay Methods!
+    public static void delay(double waitTime) {
+	try {
+	    Thread.sleep ((int)waitTime*1000);
+	} 
+	catch (Exception e) {
+	}
+	System.out.println();
+    } 
+    
+    public static void delay() {
+	try {
+	    Thread.sleep (2000);
+	} 
+	catch (Exception e) {
+	}
+	System.out.println();
+    }
+
 }

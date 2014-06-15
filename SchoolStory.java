@@ -30,6 +30,7 @@ public class SchoolStory extends StoryBit {
 	  } 
 	  catch (Exception e) {
 	  }
+	  System.out.println();
       } 
 
     public static void delay() {
@@ -38,13 +39,15 @@ public class SchoolStory extends StoryBit {
 	} 
 	catch (Exception e) {
 	}
+
+	System.out.println();
     } 
 
     public void run(){
 
 	SchoolStory nextClass;
 
-	System.out.println("You have gone to school. Which class would you like to attend? \n (math, history, or cs");  
+	System.out.println("You have gone to school. Which class would you like to attend? \n (math, history, or cs)");  
 	//delay();
 	
 	Scanner scan = new Scanner(System.in);
