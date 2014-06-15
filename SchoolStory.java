@@ -24,6 +24,9 @@ public class SchoolStory extends StoryBit {
 	//Can't think of if we need a specific constructor but here just in case
     }
 
+      public static void delay(int waitTime) {try {Thread.sleep (waitTime);} catch (Exception e) {}} 
+
+    public static void delay() {try {Thread.sleep (2000);} catch (Exception e) {}} 
 
     public void run(){
 
