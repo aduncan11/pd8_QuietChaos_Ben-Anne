@@ -8,6 +8,7 @@ public class MathStory extends SchoolStory {
     private ArrayList<String[]> answers;
     private int[] key;
     final static String ESC = "\033[";
+    private long time;
 
     UserCharacter user;
 
@@ -15,6 +16,8 @@ public class MathStory extends SchoolStory {
     public MathStory(UserCharacter u){
 	user=u;
 	
+	time=System.currentTimeMillis();
+
 	questions=new ArrayList<String>();
 	answers=new ArrayList();
 	key=new int[5];
@@ -65,12 +68,24 @@ public class MathStory extends SchoolStory {
 		answers.get(randomQ)[randomA]=null;
 	    }
 
+	    System.out.println("You have 5 seconds.");
+
+	    time=System.currentTimeMillis();
+	    long change;
+
 	    Scanner scan=new Scanner(System.in);
             String input="";
-            while(!(input.equals("1")||input.equals("2")||input.equals("3")||input.equals("4"))){
+            while(!(input.equals("1")||input.equals("2")||input.equals("3")||input.equals("4")) && System.currentTimeMillis()-time<5000){
                 input+=scan.nextLine().trim();
+		change=System.currentTimeMillis()-time;
             }
-            if(Integer.parseInt(input)==key[x]) score++;
+
+            if(change<5000){
+		if(Integer.parseInt(input)==key[x]) score++;
+	    }	    
+	    else{
+		System.out.println("Time's up!");
+	    }
 	    questions.remove(randomQ);
 	    answers.remove(randomQ);
 	    
