@@ -64,10 +64,11 @@ public class CSStory{
 		int randA=(int)Math.random()*(answers.get(randQ).length);
 		if(answers.get(randQ)[randA]==null){
 		    y--;
-		    break;
 		}
-		System.out.println(y+". "+answers.get(randQ)[randA]);
-		answers.get(x)[randA]=null;
+		else{
+		    System.out.println(y+". "+answers.get(randQ)[randA]);
+		    answers.get(x)[randA]=null;
+		}
 	    }
 	    
 	    prevTime=System.currentTimeMillis();
