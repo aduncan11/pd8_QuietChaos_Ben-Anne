@@ -9,8 +9,7 @@ public class HistoryStory extends SchoolStory {
     private int[] key;
     final static String ESC = "\033[";
     private long time;
-
-    UserCharacter user;
+    private UserCharacter user;
 
     public HistoryStory(UserCharacter u){
 	user=u;
@@ -108,7 +107,7 @@ public class HistoryStory extends SchoolStory {
 
 	    Scanner scan=new Scanner(System.in);
 	    String input="";
-	    long timeChange;
+	    long timeChange = 0;
 	    while(!(input.equals("1")||input.equals("2")||input.equals("3")||input.equals("4")) && System.currentTimeMillis()-time<5000){
 		input+=scan.nextLine().trim();
 		timeChange=System.currentTimeMillis()-time;

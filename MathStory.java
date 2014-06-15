@@ -71,7 +71,7 @@ public class MathStory extends SchoolStory {
 	    System.out.println("You have 5 seconds.");
 
 	    time=System.currentTimeMillis();
-	    long change;
+	    long change = 0;
 
 	    Scanner scan=new Scanner(System.in);
             String input="";

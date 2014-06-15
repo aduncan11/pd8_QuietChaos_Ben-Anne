@@ -10,7 +10,11 @@ public class SchoolStory extends StoryBit {
     protected HistoryStory _historyStory;
     //protected ScienceStory _scienceStory = new ScienceStory();
 
-    UserCharacter user;
+     UserCharacter user;
+
+    public SchoolStory () {
+	//This is so the subclasses can call this one without going into an infinite loop when constructed.
+    }
 
     public SchoolStory (UserCharacter u) {
 	user=u;
@@ -26,6 +30,4 @@ public class SchoolStory extends StoryBit {
 	System.out.println();  
     
     }
-
-
 }
