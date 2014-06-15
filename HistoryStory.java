@@ -8,11 +8,14 @@ public class HistoryStory extends SchoolStory {
     private ArrayList<String[]> answers;
     private int[] key;
     final static String ESC = "\033[";
-    
+    private long time;
+
     UserCharacter user;
 
     public HistoryStory(UserCharacter u){
 	user=u;
+
+	time=System.currentTimeMillis();
   
         questions = new ArrayList<String>();
         answers = new ArrayList<String[]>();
@@ -85,6 +88,8 @@ public class HistoryStory extends SchoolStory {
 	int score=0;
 
 	for(int x=0;x<questions.size();x++){
+	    System.out.println(x+"/"+questions.size()+":");
+
 	    int qnum=(int)Math.random()*11;
 	    System.out.println(questions.get(qnum));
 	    for(int y=1;y<5;y++){
@@ -97,17 +102,31 @@ public class HistoryStory extends SchoolStory {
 		if(answerNum == 0) key[x]=y;
 		answers.get(qnum)[answerNum]=null;
 	    }
+	    time=System.currentTimeMillis();
+
+	    System.out.println("You have 5 seconds.");
+
 	    Scanner scan=new Scanner(System.in);
 	    String input="";
-	    while(!(input.equals("1")||input.equals("2")||input.equals("3")||input.equals("4"))){
+	    long timeChange;
+	    while(!(input.equals("1")||input.equals("2")||input.equals("3")||input.equals("4")) && System.currentTimeMillis()-time<5000){
 		input+=scan.nextLine().trim();
+		timeChange=System.currentTimeMillis()-time;
 	    }
-	    if(Integer.parseInt(input)==key[x]) score++;
+
+	    if(timeChange<5000){
+		if(Integer.parseInt(input)==key[x]) score++;
+	    }		
+	    else{
+		System.out.println("Time's up!");
+	    }
 	    questions.remove(qnum);
 	    answers.remove(qnum);
 
 	    System.out.print(ESC + "2J"); 
 	}
+
+	System.out.println("Score received: "+1.0*score/5.0);
 
 	user.getTestScore(4*score/10);
 

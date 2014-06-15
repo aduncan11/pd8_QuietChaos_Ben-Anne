@@ -8,11 +8,17 @@ public class CSStory{
     private ArrayList<String[]> answers;
     private int[] key;
     final static String ESC = "\033[";
+    private long currTime;
+    private long prevTime;
 
     UserCharacter user;
 
     public CSStory(UserCharacter u){
+	
 	user=u;
+
+	currTime=System.currentTimeMillis();
+	prevTime=currTime;
 
 	questions=new ArrayList<String>();
 	answers=new ArrayList<String[]>();
@@ -48,7 +54,9 @@ public class CSStory{
     public void run(){
 	int score=0;
 
-	for(int x=0;x<5;x++){
+	for(int x=0;x<questions.size();x++){
+	    System.out.println(x+"/"+questions.size()+":");
+
 	    int randQ=(int)Math.random()*5;
 	    System.out.println(questions.get(randQ));
 	    
@@ -62,19 +70,52 @@ public class CSStory{
 		answers.get(x)[randA]=null;
 	    }
 	    
+	    prevTime=System.currentTimeMillis();
+
+	    System.out.println("You have 5 seconds.");
+
 	    Scanner scan=new Scanner(System.in);
 	    String input="";
-	    while(!(input.equals("1")||input.equals("2")||input.equals("3")||input.equals("4"))){
+	    while(!(input.equals("1")||input.equals("2")||input.equals("3")||input.equals("4")) && System.currentTimeMillis()-prevTime<5000){
 		input+=scan.nextLine().trim();
+		currTime=System.currentTimeMillis();
+		// if(currTime-prevTime>990 && currTime-prevTime<1010){
+		//     if(currTime-prevTime>1990 && currTime-prevTime<2010){
+		// 	if(currTime-prevTime>2990 && currTime-prevTime<3010){
+		// 	    if(currTime-prevtime>3990 && currTime-prevTime<4010){
+		// 		if(currTime-prevTime>4990 && currTime-prevTime<5010){
+		// 		    System.out.println("1...");
+		// 		    break;
+		// 		}
+		// 		System.out.println("2...");
+		// 		break;
+		// 	    }
+		// 	    System.out.println("3...");
+		// 	    break;
+		// 	}
+		// 	System.out.println("4...");
+		// 	break;
+		//     }
+		//     System.out.println("5...");
+		//     break;
+		// }
 	    }
-	    if(Integer.parseInt(input)==key[x]) score++;
+	    
+	    if(currTime-prevTime<5000){
+		if(Integer.parseInt(input)==key[x]) score++;
+	    }
+	    else{
+		System.out.println("Time's up!");
+	    }
 	    answers.remove(randQ);
 	    questions.remove(randQ);
-
+	    
 	    System.out.print(ESC + "2J"); 
     
 	}
     
+	System.out.println("Score received: "+1.0*score/5.0);
+
 	user.getTestScore(score*4/5);
 
 	System.out.print(ESC + "2J"); 
