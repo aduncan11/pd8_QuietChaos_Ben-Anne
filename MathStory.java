@@ -64,7 +64,7 @@ public class MathStory extends SchoolStory {
 		    break;
 		}
 		System.out.println(randomA+". "+answers.get(randomQ)[randomA]);
-		if(randomA==1) key[x]=y;
+		if(randomA==0) key[x]=y;
 		answers.get(randomQ)[randomA]=null;
 	    }
 
