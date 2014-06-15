@@ -7,7 +7,7 @@ public class UserCharacter extends Character{
     private PriorityQueue<ComputerCharacter> _friends;
     private Scanner scan;
 
-    public UserCharacter () {
+    public UserCharacter() {
 	super();
 
 	 scan=new Scanner(System.in);
@@ -55,10 +55,20 @@ public class UserCharacter extends Character{
 		    super._sleep= 10;
 		}
 	    }
+
+	    System.out.println("Starting Stats:");
+	    System.out.println("Grades: " + super._grades +" out of 4.0");
+	    System.out.println("Social Life: "+super._socialLife+" out of 5");
+	    System.out.println("Sleep Acquired: "+super._sleep+" out of 10 hours");
+
+	    final String ESC = "\033[";
+	    System.out.print(ESC + "2J");
     }
 
     public void sleep(){
-	_sleep = _sleep + 5; //Susceptible to change
+	int change=(_sleep+10)/2;
+	setSleep(change); //Susceptible to change
+	System.out.println("Sleep change: "+change);
     }
 
     public void hangout() {
@@ -72,10 +82,11 @@ public class UserCharacter extends Character{
     public void makeFriend(ComputerCharacter c) {
 	super.setSocialLife(c.getSocialLife());
 	_friends.add(c);
+	System.out.println("Friend added: "+c.getName());
     }
     
     public void getTestScore(int x){
-    	super._grades=(super._grades+x)/2;
+    	setGrades((super._grades+x+1)/2);
 	System.out.println("Your average is now "+super._grades);
     }
 

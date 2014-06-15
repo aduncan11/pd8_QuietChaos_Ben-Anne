@@ -5,17 +5,23 @@ import java.util.*;
 public class SchoolStory extends StoryBit {
     
     /*To make sure we don't repeat questions*/
-    protected CSStory _CompSciStory = new CSStory();
-    protected MathStory _mathStory = new MathStory();
-    protected HistoryStory _historyStory = new HistoryStory();
+    protected CSStory _CompSciStory;
+    protected MathStory _mathStory;
+    protected HistoryStory _historyStory;
     //protected ScienceStory _scienceStory = new ScienceStory();
 
-    public SchoolStory () {
+    UserCharacter user;
+
+    public SchoolStory (UserCharacter u) {
+	user=u;
+	_CompSciStory = new CSStory(user);
+	_mathStory  = new MathStory(user);
+	_historyStory  = new HistoryStory(user);
 	//Can't think of if we need a specific constructor but here just in case
     }
 
 
-    public void run(UserCharacter user){
+    public void run(){
 
 	System.out.println();  
     

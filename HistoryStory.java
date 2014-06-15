@@ -4,11 +4,16 @@ import java.lang.Math;
 
 public class HistoryStory extends SchoolStory {
 
-    ArrayList<String> questions;
-    ArrayList<String[]> answers;
-    int[] key;
+    private ArrayList<String> questions;
+    private ArrayList<String[]> answers;
+    private int[] key;
+    final static String ESC = "\033[";
+    
+    UserCharacter user;
 
-    public HistoryStory(){
+    public HistoryStory(UserCharacter u){
+	user=u;
+  
         questions = new ArrayList<String>();
         answers = new ArrayList<String[]>();
         key = new int[10];
@@ -76,7 +81,7 @@ public class HistoryStory extends SchoolStory {
 
     }
 
-    public void run(UserCharacter user){
+    public void run(){
 	int score=0;
 
 	for(int x=0;x<questions.size();x++){
@@ -90,7 +95,7 @@ public class HistoryStory extends SchoolStory {
 		}
 		System.out.println(y+". "+answers.get(qnum)[answerNum]);
 		if(answerNum == 0) key[x]=y;
-		//answers.get(qnum).remove(answerNum);
+		answers.get(qnum)[answerNum]=null;
 	    }
 	    Scanner scan=new Scanner(System.in);
 	    String input="";
@@ -100,8 +105,12 @@ public class HistoryStory extends SchoolStory {
 	    if(Integer.parseInt(input)==key[x]) score++;
 	    questions.remove(qnum);
 	    answers.remove(qnum);
+
+	    System.out.print(ESC + "2J"); 
 	}
 
 	user.getTestScore(4*score/10);
+
+	System.out.print(ESC + "2J"); 
     }
 }

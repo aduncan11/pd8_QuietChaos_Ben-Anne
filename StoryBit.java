@@ -1,6 +1,6 @@
 public abstract class StoryBit{
 
 
-    public abstract void run(UserCharacter c);
+    public abstract void run();
 
 }

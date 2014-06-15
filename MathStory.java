@@ -4,11 +4,17 @@ import java.lang.Math;
 
 public class MathStory extends SchoolStory {
 
-    ArrayList<String> questions;
-    ArrayList<String[]> answers;
-    int[] key;
+    private ArrayList<String> questions;
+    private ArrayList<String[]> answers;
+    private int[] key;
+    final static String ESC = "\033[";
 
-    public MathStory(){
+    UserCharacter user;
+
+
+    public MathStory(UserCharacter u){
+	user=u;
+	
 	questions=new ArrayList<String>();
 	answers=new ArrayList();
 	key=new int[5];
@@ -42,7 +48,7 @@ public class MathStory extends SchoolStory {
 	
     }
 
-    public void run(UserCharacter user){
+    public void run(){
 	int score=0;
 	
 	for(int x=0;x<5;x++){
@@ -67,9 +73,13 @@ public class MathStory extends SchoolStory {
             if(Integer.parseInt(input)==key[x]) score++;
 	    questions.remove(randomQ);
 	    answers.remove(randomQ);
+	    
+	    System.out.print(ESC + "2J"); 
         }
 
 	user.getTestScore(4*score/5);
+
+	System.out.print(ESC + "2J"); 
     }
     
 }
