@@ -20,9 +20,9 @@ public class UserCharacter extends Character{
     
 	super.setName (input);
 
-	System.out.println ("What is your gender?   (male or female");
+	System.out.println ("What is your gender?   (male or female)");
 	input = "";
-	while ((!input.equals("male")) || (!input.equals ("female"))) {
+	while (!(input.equals("male") || input.equals ("female"))) {
 	    input += scan.nextLine().trim();
 	}
 	delay(0.5);
@@ -68,8 +68,8 @@ public class UserCharacter extends Character{
 	    System.out.println("Sleep Acquired: "+super._sleep+" out of 10 hours");
 	    delay(5.0);
 
-	    final String ESC = "\033[";
-	    System.out.print(ESC + "2J");
+	    System.out.println(((char) 27)+"[2J");
+
     }
 
     public void sleep(){

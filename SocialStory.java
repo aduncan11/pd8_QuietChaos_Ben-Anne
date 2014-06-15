@@ -5,7 +5,6 @@ public class SocialStory extends StoryBit{
 
     ComputerCharacter friend;
     UserCharacter user;
-    final static String ESC = "\033[";
 
     public SocialStory(UserCharacter u){
 	user=u;
@@ -46,7 +45,7 @@ public class SocialStory extends StoryBit{
 	System.out.println(friend.getName() + "needs help with a problem...");
 	delay();
 	System.out.println(friend.getName()+": Hey, " +user.getName()+" Can you help me out with something?");
-	delay()
+	delay();
 	System.out.println("(yes or no)");
 
 	Scanner scan=new Scanner(System.in);
@@ -71,8 +70,6 @@ public class SocialStory extends StoryBit{
 	    }
 
 	    delay();
-
-	    System.out.print(ESC + "2J"); 
 
 	    System.out.println("Great! So, JProm is tomorrow and I don't have a date, but " +n1+ " asked me if I wanted to go with zhim, but I told zhim I would have to think about it because I don't know if zhe likes me or if just wanted to go with me, and I don't know if " +n2+ " is going to ask me tomorrow. What should I do?? ...");
 	    delay();
@@ -108,7 +105,6 @@ public class SocialStory extends StoryBit{
 	    }
 
 	    delay();
-	    System.out.print(ESC + "2J"); 
 
 	}
 
@@ -139,17 +135,20 @@ public class SocialStory extends StoryBit{
 	    }
 
 	    delay();
-
-	    System.out.print(ESC + "2J"); 
 	}
 
 	System.out.println("Social status change: "+social);
 	delay();
 
-	user.hangout(friend,social);
-	delay(5.0);
+	user.hangout();
 
-	System.out.print(ESC + "2J"); 
+	System.out.println("Hit enter to continue.");
+	Scanner sc=new Scanner(System.in);
+	String in="nothing";
+	while(in.length()>0){
+	    in=sc.nextLine().trim();
+	}
+
 
     }
 }

@@ -7,7 +7,6 @@ public class HistoryStory extends SchoolStory {
     private ArrayList<String> questions;
     private ArrayList<String[]> answers;
     private int[] key;
-    final static String ESC = "\033[";
     private long time;
     private UserCharacter user;
 
@@ -131,15 +130,19 @@ public class HistoryStory extends SchoolStory {
 	    questions.remove(qnum);
 	    answers.remove(qnum);
 
-	    System.out.print(ESC + "2J"); 
+	    System.out.println(((char) 27)+"[2J");
 	}
 
 	System.out.println("Score received: "+100.0*score/5.0);
 	delay();
 
 	user.getTestScore(4*score/10);
-	delay(5.0);
 
-	System.out.print(ESC + "2J"); 
+	System.out.println("Hit enter to continue.");
+	Scanner sc=new Scanner(System.in);
+	String input="nothing";
+	while(input.length()>0){
+	    input=sc.nextLine().trim();
+	}
     }
 }

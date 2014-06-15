@@ -7,7 +7,6 @@ public class CSStory extends SchoolStory{
     private ArrayList<String> questions;
     private ArrayList<String[]> answers;
     private int[] key;
-    final static String ESC = "\033[";
     private long currTime;
     private long prevTime;
 
@@ -101,7 +100,7 @@ public class CSStory extends SchoolStory{
 	    answers.remove(randQ);
 	    questions.remove(randQ);
 	    
-	    System.out.print(ESC + "2J"); 
+	    System.out.println(((char) 27)+"[2J");
 	    delay();
     
 	}
@@ -110,7 +109,13 @@ public class CSStory extends SchoolStory{
 	delay();
 
 	user.getTestScore(score*4/5);
-	delay(5.0);
+
+	System.out.println("Hit enter to continue.");
+	Scanner sc=new Scanner(System.in);
+	String input="nothing";
+	while(input.length()>0){
+	    input=sc.nextLine().trim();
+	}
     }
 
 }
