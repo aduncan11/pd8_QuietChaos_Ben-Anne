@@ -65,7 +65,7 @@ public class Driver{
         UserCharacter user=new UserCharacter();
 
         //construct the queue                                                                                  
-        StoryBit[] storyBits = new StoryBit[10];
+        StoryBit[] storyBits = new StoryBit[11];
         storyBits[0]=new SchoolStory(user);
         storyBits[1]=new DecisionStory(user);
         storyBits[2]=new SocialStory(user);
