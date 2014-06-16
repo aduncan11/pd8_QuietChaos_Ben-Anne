@@ -265,33 +265,3 @@ class MazeSolver extends StoryBit{
 
 }//end class MazeSolver
 
-
-/*
-The maze that represents the school is called maze03.dat. The second variable will either be the number 0, 1, or 2. That will determine what class you are going to for this period. 0 is ComputerScience, 1 is History, 2 is math. The third variable will either be the number 0,1,2, or 3. That will determine what class you are coming from. 0 is Computer Science, 1 is History, 2 is Math, and 3 is for the first class of the day so you'll be put in randomly. 
-*/
-
-
-public class Maze {
-
-    public static void main( String[] args ) {
-
-
-
-	UserCharacter u = new UserCharacter(1);
-
-	MazeSolver ms = new MazeSolver ("maze03.dat",0,3,u);
-
-     
-
-	//clear screen
-	System.out.println( "[2J" ); 
-
-	//display maze 
-
-	System.out.println(ms); //Reveal the maze for the first time
-
-	ms.run(); //Journey through the maze
-
-    }
-
-}//end class Maze

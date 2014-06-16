@@ -47,6 +47,19 @@ public class SchoolStory extends StoryBit {
 
 	SchoolStory nextClass;
 
+	int lastClass = 3;
+
+	System.out.println("Have you been to a class yet? 3 for no, 0 for Computer Science, 1 for History, 2 for Math. If you've taken more than one class, answer with your most recent class.");
+
+	Scanner scan2 = new Scanner (System.in);
+	int input2=0;
+	while(!(input2 == 0) || input2 == 1 || input2== 2 || input2 == 3){
+	    input2 = Integer.parseInt(scan2.nextLine().trim());
+	}
+
+	lastClass = input2;
+	
+
 	System.out.println("You have gone to school. Which class would you like to attend? \n (math, history, or cs)");  
 	//delay();
 	
@@ -56,14 +69,42 @@ public class SchoolStory extends StoryBit {
 	    input+=scan.nextLine().trim();
 	}
 	if(input.equals("history")){
+	    MazeSolver ms = new MazeSolver("maze03.dat", 1, lastClass, user);
+	    //clear screen
+	    System.out.println( "[2J" ); 
+
+	    //display maze 
+
+	    System.out.println(ms); //Reveal the maze for the first time
+
+	    ms.run(); //Journey through the maze
 	    nextClass=new HistoryStory(user);
 	}
 
 	else if(input.equals("cs")){
+	    MazeSolver ms = new MazeSolver("maze03.dat", 0, lastClass, user);
+	    //clear screen
+	    System.out.println( "[2J" ); 
+
+	    //display maze 
+
+	    System.out.println(ms); //Reveal the maze for the first time
+
+	    ms.run(); //Journey through the maze
 	    nextClass=new CSStory(user);
 	}
 	
 	else{
+	    MazeSolver ms = new MazeSolver("maze03.dat", 2, lastClass, user);
+	    //clear screen
+	    System.out.println( "[2J" ); 
+
+	    //display maze 
+
+	    System.out.println(ms); //Reveal the maze for the first time
+
+	    ms.run(); //Journey through the maze
+
 	    nextClass=new MathStory(user);
 	}
 	
