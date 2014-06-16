@@ -42,7 +42,7 @@ public class SocialStory extends StoryBit{
     public void run(){ 
 	int social=0; 
 
-	System.out.println(friend.getName() + "needs help with a problem...");
+	System.out.println(friend.getName() + " needs help with a problem...");
 	delay();
 	System.out.println(friend.getName()+": Hey, " +user.getName()+" Can you help me out with something?");
 	delay();
