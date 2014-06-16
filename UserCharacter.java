@@ -38,20 +38,20 @@ public class UserCharacter extends Character{
 	System.out.println ("Students at this school have three main characteristics that they try to balance - Their social status, their grades, and how much sleep they can get. Jocks have very good social status but bad grades. Nerds have good grades but bad social skills. Narcoleptics have a lot of sleep but bad social status.");
 	delay();
 
-	System.out.println ("What is your status as a student? \n Type (0) for Jock, (1) for Nerd, and (2) for Narcoleptic");
+	System.out.println ("What is your status as a student? \n Type (1) for Jock, (2) for Nerd, and (3) for Narcoleptic");
 
 	input = "";
 	while (!(input.equals ("1")) || (input.equals ("2")) || (input.equals ("3"))) {
 	    input = scan.nextLine().trim();
 	}
 	delay(0.5);
-	    if (input.equals ("0")) {
+	    if (input.equals ("1")) {
 		super._grades = 1;
 		super._socialLife = 5;  
 		super._sleep= 5;
 	    }
 	    else {
-		if (input.equals ("1")) {
+		if (input.equals ("2")) {
 		    super._grades = 4;
 		    super._socialLife = 1;  
 		    super._sleep= 5;		     
