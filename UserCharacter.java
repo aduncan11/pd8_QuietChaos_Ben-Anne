@@ -19,7 +19,7 @@ public class UserCharacter extends Character{
 	 System.out.println ("What is your name?");
 	String input="";
 	while(input.equals("")){
-	    input+=scan.nextLine().trim();
+	    input=scan.nextLine().trim();
 	}
     
 	super.setName (input);
@@ -27,7 +27,7 @@ public class UserCharacter extends Character{
 	System.out.println ("What is your gender?   (male or female)");
 	input = "";
 	while (!(input.equals("male") || input.equals ("female"))) {
-	    input += scan.nextLine().trim();
+	    input = scan.nextLine().trim();
 	}
 	delay(0.5);
 	    super.setGender(input);
@@ -42,7 +42,7 @@ public class UserCharacter extends Character{
 
 	input = "";
 	while (!(input.equals ("1")) || (input.equals ("2")) || (input.equals ("3"))) {
-	    input += scan.nextLine().trim();
+	    input = scan.nextLine().trim();
 	}
 	delay(0.5);
 	    if (input.equals ("0")) {

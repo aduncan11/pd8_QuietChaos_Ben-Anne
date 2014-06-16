@@ -66,7 +66,7 @@ public class SchoolStory extends StoryBit {
 	Scanner scan = new Scanner(System.in);
 	String input="";
 	while(!(input.equals("history") || input.equals("math") || input.equals("cs"))){
-	    input+=scan.nextLine().trim();
+	    input=scan.nextLine().trim();
 	}
 	if(input.equals("history")){
 	    MazeSolver ms = new MazeSolver("maze03.dat", 1, lastClass, user);

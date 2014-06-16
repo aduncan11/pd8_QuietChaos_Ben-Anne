@@ -79,7 +79,7 @@ public class MathStory extends SchoolStory {
 	    Scanner scan=new Scanner(System.in);
             String input="";
             while(!(input.equals("1")||input.equals("2")||input.equals("3")||input.equals("4"))){
-                input+=scan.nextLine().trim();
+                input=scan.nextLine().trim();
 		change=System.currentTimeMillis()-time;
 		if (change > 5000) {
 		    System.out.println("Time's up!");

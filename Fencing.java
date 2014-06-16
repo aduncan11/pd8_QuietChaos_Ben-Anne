@@ -81,7 +81,7 @@ public class Fencing extends StoryBit{
 	    Scanner scan=new Scanner(System.in);
 	    String input="";
 	    while(!(input.equals("1")||input.equals("2")||input.equals("3")||input.equals("4"))){
-		input+=scan.nextLine().trim();
+		input=scan.nextLine().trim();
 		timeChange =System.currentTimeMillis() - prevTime;
 		if (timeChange > 5000) {
 		    System.out.println("Time's up!");
