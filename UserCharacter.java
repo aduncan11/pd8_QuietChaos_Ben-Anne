@@ -7,6 +7,10 @@ public class UserCharacter extends Character{
     private PriorityQueue<ComputerCharacter> _friends;
     private Scanner scan;
 
+    public UserCharacter (int i) {
+	//just a dud for testing
+    }
+
     public UserCharacter() {
 	super();
 
