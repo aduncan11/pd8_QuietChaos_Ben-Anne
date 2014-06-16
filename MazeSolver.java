@@ -199,7 +199,7 @@ public class MazeSolver extends StoryBit{
 	if (!solved) {
 	System.out.println ("Times up! You're late to class!");
 	System.out.println("You're GPA has gone down one.");
-	user.setGrade(-1);
+	user.setGrades(-1);
 	delay (500);
 	System.out.println("Your GPA is now: " + user.getGrades());
 	}

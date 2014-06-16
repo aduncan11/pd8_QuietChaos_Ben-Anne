@@ -47,17 +47,17 @@ public class SchoolStory extends StoryBit {
 
 	SchoolStory nextClass;
 
-	int lastClass = 3;
+	int lastClass = -1;
 
 	System.out.println("Have you been to a class yet? 3 for no, 0 for Computer Science, 1 for History, 2 for Math. If you've taken more than one class, answer with your most recent class.");
 
 	Scanner scan2 = new Scanner (System.in);
-	int input2=0;
-	while(!(input2 == 0) || input2 == 1 || input2== 2 || input2 == 3){
-	    input2 = Integer.parseInt(scan2.nextLine().trim());
+	String input2="";
+	while (!(input2.equals ("1")) || (input2.equals ("2")) || (input2.equals ("3")) || (input2.equals ("0"))) {
+	    input2 = scan2.nextLine().trim();
 	}
 
-	lastClass = input2;
+	lastClass = Integer.parseInt(input2);
 	
 
 	System.out.println("You have gone to school. Which class would you like to attend? \n (math, history, or cs)");  

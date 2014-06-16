@@ -77,7 +77,7 @@ public class Driver{
         storyBits[8]=new SchoolStory(user);
       storyBits[9]=new Fencing(user);
         storyBits[10]=new DressingUp(user);
-        for(int x=0;x<storyBits.length;x++){
+        for(int x=0;x<storyBits.length;x++){/*
             int randBit=(int)Math.random()*(storyBits.length - x);
             if(storyBits[randBit]==null){
                 x--;
@@ -85,15 +85,20 @@ public class Driver{
             else{
                 story.add(storyBits[randBit]);
                 storyBits[randBit]=null;
-            }
+            }*/
+
+	    story.add(storyBits[x]);
+
         }
 
         //traverse through queue and run the story...                                                          
         while(story.peek()!= null){
             StoryBit next=story.remove(); //get the next part of the story!                                    
             next.run();//run that part with the user as the input character!                                   
+	  
+            System.out.println(((char) 27)+"[2J"); //Clear scree
 
-            System.out.println(((char) 27)+"[2J"); //Clear screen                                              
+	                                         
             user.printStats();
 
             System.out.println("Hit enter to continue");
