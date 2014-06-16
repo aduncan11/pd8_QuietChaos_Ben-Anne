@@ -68,8 +68,7 @@ public class SchoolStory extends StoryBit {
 	}
 	
 	System.out.println("Hit enter to continue.");
-	Scanner sc=new Scanner(System.in);
-	String input="nothing";
+	input="nothing";
 	while(input.length()>0){
 	    input=sc.nextLine().trim();
 	}

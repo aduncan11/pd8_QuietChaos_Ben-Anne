@@ -37,7 +37,7 @@ public class UserCharacter extends Character{
 	System.out.println ("What is your status as a student? \n Type (0) for Jock, (1) for Nerd, and (2) for Narcoleptic");
 
 	input = "";
-	while ((!input.equals ("1")) || (!input.equals ("2")) || (!input.equals ("3"))) {
+	while (!(input.equals ("1")) || (input.equals ("2")) || (input.equals ("3"))) {
 	    input += scan.nextLine().trim();
 	}
 	delay(0.5);
@@ -59,17 +59,21 @@ public class UserCharacter extends Character{
 		}
 	    }
 
-	    System.out.println("Starting Stats:");
-	    delay(1.0);
-	    System.out.println("Grades: " + super._grades +" out of 4.0");
-	    delay(1.0);
-	    System.out.println("Social Life: "+super._socialLife+" out of 5");
-	    delay(1.0);
-	    System.out.println("Sleep Acquired: "+super._sleep+" out of 10 hours");
-	    delay(5.0);
+	    printStats();
 
 	    System.out.println(((char) 27)+"[2J");
 
+    }
+
+    public void printStats(){
+	System.out.println("Starting Stats:");
+	delay(1.0);
+	System.out.println("Grades: " + super._grades +" out of 4.0");
+	delay(1.0);
+	System.out.println("Social Life: "+super._socialLife+" out of 5");
+	delay(1.0);
+	System.out.println("Sleep Acquired: "+super._sleep+" out of 10 hours");
+	delay(5.0);
     }
 
     public void sleep(){

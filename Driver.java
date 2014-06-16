@@ -77,10 +77,8 @@ public class Driver{
 	//game 9
 	storyBits[10]=new DecisionStory(user);
 
-	LinkedList<StoryBit> story=new LinkedList();
-
 	for(int x=0;x<storyBits.length;x++){
-	    randBit=Math.random()*(storyBits.length - x -1);
+	    int randBit=(int)Math.random()*(storyBits.length - x);
 	    if(storyBits[randBit]==null){
 		x--;
 	    }
@@ -100,8 +98,7 @@ public class Driver{
 
 	    System.out.println("Hit enter to continue");
 	    
-	    Scanner sc=new Scanner(System.in);
-	    String input="nothing";
+	    input="nothing";
 	    while(input.length()>0){
 		input=sc.nextLine().trim();
 	    }
@@ -111,8 +108,7 @@ public class Driver{
 	delay();
 	System.out.println("Disengage Indiana Jones. Enter final countdown mode. \n"+"http://youtu.be/9jK-NcRmVcw?t=12s");
 	delay();
-	Scanner sc=new Scanner(System.in);
-	String input="nothing";
+	input="nothing";
 	while(input.length()>0){
 	    input=sc.nextLine().trim();
 	}
@@ -169,8 +165,7 @@ public class Driver{
 	    System.out.println("Don't come back to high school.");
 	    delay();
 	}
-	Scanner sc=new Scanner(System.in);
-	String input="nothing";
+	input="nothing";
 	while(input.length()>0){
 	    input=sc.nextLine().trim();
 	}
