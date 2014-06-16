@@ -64,18 +64,20 @@ public class Driver{
 	UserCharacter user=new UserCharacter();
 
 	//construct the queue
-	StoryBit[] storyBits = new StoryBit[10];
+	StoryBit[] storyBits = new StoryBit[8];
 	storyBits[0]=new SchoolStory(user);
 	storyBits[1]=new DecisionStory(user);
 	//game: storyBits[2]=
-	storyBits[3]=new SchoolStory(user);
+	storyBits[2]=new SchoolStory(user);
 	//game: storyBits[4]=
-	storyBits[5]=new DecisionStory(user);
+	storyBits[3]=new DecisionStory(user);
+	storyBits[4]=new DressingUp(user);
 	//game  6
-	storyBits[7]=new SocialStory(user);
-	storyBits[8]=new SchoolStory(user);
+	storyBits[5]=new SocialStory(user);
+	storyBits[6] = new Fencing(user);
+	storyBits[7]=new SchoolStory(user);
 	//game 9
-	storyBits[10]=new DecisionStory(user);
+	storyBits[8]=new DecisionStory(user);
 
 	for(int x=0;x<storyBits.length;x++){
 	    int randBit=(int)Math.random()*(storyBits.length - x);
