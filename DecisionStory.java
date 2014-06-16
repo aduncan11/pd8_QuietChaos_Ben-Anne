@@ -6,7 +6,6 @@ public class DecisionStory extends StoryBit{
     private UserCharacter user;
 
     public DecisionStory(UserCharacter u){
-<<<<<<< HEAD
 	user=u;
     }
 
@@ -17,7 +16,6 @@ public class DecisionStory extends StoryBit{
 	catch (Exception e) {
 	}
 	System.out.println();
-=======
         user=u;
     }
 
@@ -28,7 +26,7 @@ public class DecisionStory extends StoryBit{
         catch (Exception e) {
         }
         System.out.println();
->>>>>>> 2541598cab7657ba65b2c58958b8f53f79052aba
+
     }
 
     public static void delay() {
@@ -40,7 +38,6 @@ public class DecisionStory extends StoryBit{
         System.out.println();
     }
 
-<<<<<<< HEAD
 
     public void run(){
 	System.out.println("You have the afternoon off. What would you like to do? (sleep, study, or hang out)");
@@ -69,12 +66,10 @@ public class DecisionStory extends StoryBit{
 	    user.hangout();
 	    delay();
 	}
-=======
+
     public void run(){
-	System.out.println("You have the afternoon off. What would you like to do? (sleep, study, or hang out)\
-");
-	Scanner scan=new Scanner(System.in);
-        String input="";
+	System.out.println("You have the afternoon off. What would you like to do? (sleep, study, or hang out)");
+        input="";
         while(!(input.equals("sleep")||input.equals("study")||input.equals("hang out"))){
             input+=scan.nextLine().trim();
 	}
@@ -98,7 +93,6 @@ public class DecisionStory extends StoryBit{
             user.hangout();
             delay();
         }
->>>>>>> 2541598cab7657ba65b2c58958b8f53f79052aba
 
     }
 }

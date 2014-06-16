@@ -27,30 +27,6 @@ public class Driver{
         System.out.println();
     }
 
-    public static void main(String[] Args){
-        //INTRO                                                                                                
-         System.out.println(((char) 27)+"[2J");
-
-        System.out.println("Welcome to Surviving Stuyvesant High School! Ben and Anne here.");
-        delay();
-        System.out.println("We could ask you for your name, but that can wait. For now we will call you Stan."\
-);
-        delay(4.0);
-        System.out.println("Well, Stan, we hear you are a student at Stuyvesant High School, and while you are\
- an upperclassman taking classes like APCS, and attending glamorous galas like JProm, you are still a little c\
-onfused on how to handle this whole... scool thing.");
-        delay(4.0);
-        System.out.println("You don't have your life all figured out? Stan, where have you been all this time?\
-");
-
-    public static void delay() {
-        try {
-            Thread.sleep (4000);
-        }
-        catch (Exception e) {
-        }
-        System.out.println();
-    }
 
     public static void main(String[] Args){
         //INTRO                                                                                                
@@ -58,28 +34,20 @@ onfused on how to handle this whole... scool thing.");
 
         System.out.println("Welcome to Surviving Stuyvesant High School! Ben and Anne here.");
         delay();
-        System.out.println("We could ask you for your name, but that can wait. For now we will call you Stan."\
+        System.out.println("We could ask you for your name, but that can wait. For now we will call you Stan."
 );
         delay(4.0);
-        System.out.println("Well, Stan, we hear you are a student at Stuyvesant High School, and while you are\
- an upperclassman taking classes like APCS, and attending glamorous galas like JProm, you are still a little c\
-onfused on how to handle this whole... scool thing.");
+        System.out.println("Well, Stan, we hear you are a student at Stuyvesant High School, and while you are an upperclassman taking classes like APCS, and attending glamorous galas like JProm, you are still a little confused on how to handle this whole... scool thing.");
         delay(4.0);
-        System.out.println("You don't have your life all figured out? Stan, where have you been all this time?\
-");
+        System.out.println("You don't have your life all figured out? Stan, where have you been all this time?");
         delay(4.0);
-        System.out.println("Well, do not worry. Stan, my man, you can still be on the path to success if you a\
-re careful to balance your priorities and never get less than a 95 on any test. Easy!");
+        System.out.println("Well, do not worry. Stan, my man, you can still be on the path to success if you are careful to balance your priorities and never get less than a 95 on any test. Easy!");
         delay(4.0);
-        System.out.println("Most importantly, Stan, make sure to follow prompt instructions carefully, especia\
-lly in regards to capitalization.");
+        System.out.println("Most importantly, Stan, make sure to follow prompt instructions carefully, especially in regards to capitalization.");
         delay(4.0);
-        System.out.println("Pay attention, and take advantage of long pauses we give you, Stan, because the cu\
-rrent screen will disappear between scenes. Don't miss the information as it comes up!");
+        System.out.println("Pay attention, and take advantage of long pauses we give you, Stan, because the current screen will disappear between scenes. Don't miss the information as it comes up!");
         delay(4.0);
-        System.out.println("See you on the other side, Stan... if you make it...(Cue Indiana Jones themesong. \
-https://www.youtube.com/watch?v=lOL3NShi5fU \n This is required to continue. Otherwise you will surely fail.")\
-;
+        System.out.println("See you on the other side, Stan... if you make it...(Cue Indiana Jones themesong. https://www.youtube.com/watch?v=lOL3NShi5fU \n This is required to continue. Otherwise you will surely fail.");
         delay(4.0);
         System.out.println("Hit enter to continue");
            Scanner sc=new Scanner(System.in);
@@ -130,7 +98,6 @@ https://www.youtube.com/watch?v=lOL3NShi5fU \n This is required to continue. Oth
 
             System.out.println("Hit enter to continue");
 
-
             input="nothing";
             while(input.length()>0){
                 input=sc.nextLine().trim();
@@ -139,8 +106,7 @@ https://www.youtube.com/watch?v=lOL3NShi5fU \n This is required to continue. Oth
 
         System.out.println("Game over.");
         delay();
-        System.out.println("Disengage Indiana Jones. Enter final countdown mode. \n"+"http://youtu.be/9jK-NcRm\
-Vcw?t=12s");
+        System.out.println("Disengage Indiana Jones. Enter final countdown mode. \n"+"http://tinyurl.com/pgb2crl");
         delay();
         input="nothing";
         while(input.length()>0){
@@ -152,11 +118,9 @@ Vcw?t=12s");
             if(user.getSleep()>8){
                 if(user.getGrades()>3){
 
-                    System.out.println("Congrats! Stan-- err, we mean "+user.getName()+" you have won due to y\
-our genetic superiority.");
+                    System.out.println("Congrats! Stan-- err, we mean "+user.getName()+" you have won due to your genetic superiority.");
                     delay();
-                    System.out.println("You have not only survived Stuyvesant High School, but you have succee\
-ded in balancing your sleep, social life, and grades.");
+                    System.out.println("You have not only survived Stuyvesant High School, but you have succeeded in balancing your sleep, social life, and grades.");
                     delay();
                     System.out.println("You are the impossible child.");
                     delay();
@@ -164,14 +128,12 @@ ded in balancing your sleep, social life, and grades.");
                     delay();
                 }
 
-                System.out.println("Your social life and grades were on point, Stan-- err, we mean "+user.getN\
-ame()+" but your grades could use a little more studying. Better luck next time.");
+                System.out.println("Your social life and grades were on point, Stan-- err, we mean "+user.getName()+" but your grades could use a little more studying. Better luck next time.");
                 delay();
 
             }
             else if(user.getGrades()>3){
-                System.out.println("Well, it looks like you never slept. This is probably a medical issue you \
-will want to deal with before playing again.");
+                System.out.println("Well, it looks like you never slept. This is probably a medical issue youwill want to deal with before playing again.");
                 delay();
             }
             else{
@@ -182,8 +144,7 @@ will want to deal with before playing again.");
         }
         else if(user.getSleep()>8){
             if(user.getGrades()>3){
-                System.out.println("Well, Stan-- err, we mean "+user.getName()+"  you slept, and you did well \
-in school, but you made no friends. Why you make no friends? Agh.");
+                System.out.println("Well, Stan-- err, we mean "+user.getName()+"  you slept, and you did well in school, but you made no friends. Why you make no friends? Agh.");
                 delay();
             }
             else{
@@ -196,11 +157,9 @@ in school, but you made no friends. Why you make no friends? Agh.");
             delay();
 	}
         else{
-            System.out.println("Okay, you really need to work on this. You didn't sleep. You didn't make any f\
-riends. You didn't even do well in school!");
+            System.out.println("Okay, you really need to work on this. You didn't sleep. You didn't make any friends. You didn't even do well in school!");
             delay();
-            System.out.println("Who are you? What are you doing? These are the panic-inducing questions you ca\
-n face in college.");
+            System.out.println("Who are you? What are you doing? These are the panic-inducing questions you can face in college.");
             delay();
             System.out.println("Don't come back to high school.");
             delay();
