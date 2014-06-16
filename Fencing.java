@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 import java.lang.Math;
 
-public class Fencing{
+public class Fencing extends StoryBit{
 
     private ArrayList<String> Scenarios;
     private ArrayList<String[]> Choices;

@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 import java.awt.event.*;
 
-class MazeSolver {
+class MazeSolver extends StoryBit{
 
     private char[][] maze;
     private int h, w; //height, width of maze

@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 import java.lang.Math;
 
-public class DressingUp{
+public class DressingUp extends StoryBit{
 
     private ArrayList<String> questions;
     private ArrayList<String[]> answers;
