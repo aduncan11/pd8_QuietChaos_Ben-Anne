@@ -68,7 +68,7 @@ public class Driver{
         StoryBit[] storyBits = new StoryBit[10];
         storyBits[0]=new SchoolStory(user);
         storyBits[1]=new DecisionStory(user);
-        storyBits[2]=SocialStory(user);
+        storyBits[2]=new SocialStory(user);
         storyBits[3]=new DressingUp(user);
         storyBits[4]=new SchoolStory(user);
         storyBits[5]=new DecisionStory(user);
