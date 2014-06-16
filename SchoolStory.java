@@ -53,7 +53,7 @@ public class SchoolStory extends StoryBit {
 
 	Scanner scan2 = new Scanner (System.in);
 	String input2="";
-	while (!(input2.equals ("1")) || (input2.equals ("2")) || (input2.equals ("3")) || (input2.equals ("0"))) {
+	while (!(input2.equals ("1") || input2.equals ("2") || input2.equals ("3") || input2.equals ("0"))) {
 	    input2 = scan2.nextLine().trim();
 	}
 
