@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.*;
+import java.lang.Math;
 
 public class Driver{
     
@@ -19,7 +20,7 @@ public class Driver{
 
     public static void delay() {
 	try {
-	    Thread.sleep (2000);
+	    Thread.sleep (4000);
 	} 
 	catch (Exception e) {
 	}
@@ -56,22 +57,123 @@ public class Driver{
 
 	System.out.println(((char) 27)+"[2J"); 
 
+	//SETUP 
+
 	//variables for the whole game:
 	LinkedList<StoryBit> story=new LinkedList<StoryBit>();
 	UserCharacter user=new UserCharacter();
 
-	//construct the queue (this can later be made more elaborate):
-	for(int x=0;x<1;x++){
-	    StoryBit next=new SocialStory(user);
-	    story.add(next);
+	//construct the queue
+	StoryBit[] storyBits = new StoryBit[10];
+	storyBits[0]=new SchoolStory(user);
+	storyBits[1]=new DecisionStory(user);
+	//game: storyBits[2]=
+	storyBits[3]=new SchoolStory(user);
+	//game: storyBits[4]=
+	storyBits[5]=new DecisionStory(user);
+	//game  6
+	storyBits[7]=new SocialStory(user);
+	storyBits[8]=new SchoolStory(user);
+	//game 9
+	storyBits[10]=new DecisionStory(user);
+
+	LinkedList<StoryBit> story=new LinkedList();
+
+	for(int x=0;x<storyBits.length;x++){
+	    randBit=Math.random()*(storyBits.length - x -1);
+	    if(storyBits[randBit]==null){
+		x--;
+	    }
+	    else{
+		story.add(storyBits[randBit]);
+		storyBits[randBit]=null;
+	    }
 	}
 	
 	//traverse through queue and run the story...
 	while(story.peek()!= null){
 	    StoryBit next=story.remove(); //get the next part of the story!
 	    next.run();//run that part with the user as the input character!
+	    
+	    System.out.println(((char) 27)+"[2J"); //Clear screen
+	    user.printStats();
+
+	    System.out.println("Hit enter to continue");
+	    
+	    Scanner sc=new Scanner(System.in);
+	    String input="nothing";
+	    while(input.length()>0){
+		input=sc.nextLine().trim();
+	    }
 	}
 	
 	System.out.println("Game over.");
+	delay();
+	System.out.println("Disengage Indiana Jones. Enter final countdown mode. \n"+"http://youtu.be/9jK-NcRmVcw?t=12s");
+	delay();
+	Scanner sc=new Scanner(System.in);
+	String input="nothing";
+	while(input.length()>0){
+	    input=sc.nextLine().trim();
+	}
+	user.printStats();
+
+	if(user.getSocialLife()>3){
+	    if(user.getSleep()>8){
+		if(user.getGrades()>3){
+
+		    System.out.println("Congrats! Stan-- err, we mean "+user.getName()+" you have won due to your genetic superiority.");
+		    delay();
+		    System.out.println("You have not only survived Stuyvesant High School, but you have succeeded in balancing your sleep, social life, and grades.");
+		    delay();
+		    System.out.println("You are the impossible child.");
+		    delay();
+		    System.out.println("You are the chosen one.");
+		    delay();
+		}
+
+		System.out.println("Your social life and grades were on point, Stan-- err, we mean "+user.getName()+" but your grades could use a little more studying. Better luck next time.");
+		delay();
+
+	    }
+	    else if(user.getGrades()>3){
+		System.out.println("Well, it looks like you never slept. This is probably a medical issue you will want to deal with before playing again.");
+		delay();
+
+	    }
+	    else{
+		System.out.println("Yikes! All you did was socialize. Get on top of your priorities!");
+		delay();
+	    }
+
+	}
+	else if(user.getSleep()>8){
+	    if(user.getGrades()>3){
+		System.out.println("Well, Stan-- err, we mean "+user.getName()+"  you slept, and you did well in school, but you made no friends. Why you make no friends? Agh.");
+		delay();
+	    }
+	    else{
+		System.out.println("You can't only sleep if you want to survive high school!");
+		delay();
+	    }
+	}
+	else if(user.getGrades()>3){
+	    System.out.println("All you did was study. What are you doing?? Get out of the house!");
+	    delay();
+	}
+	else{
+	    System.out.println("Okay, you really need to work on this. You didn't sleep. You didn't make any friends. You didn't even do well in school!");
+	    delay();
+	    System.out.println("Who are you? What are you doing? These are the panic-inducing questions you can face in college.");
+	    delay();
+	    System.out.println("Don't come back to high school.");
+	    delay();
+	}
+	Scanner sc=new Scanner(System.in);
+	String input="nothing";
+	while(input.length()>0){
+	    input=sc.nextLine().trim();
+	}
+	
     }
 }
