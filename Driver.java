@@ -169,9 +169,9 @@ public class Driver{
             System.out.println("Don't come back to high school.");
             delay();
         }
-        input="nothing";
-        while(input.length()>0){
-            input=sc.nextLine().trim();
+     
+	System.out.println("The end");
+	System.exit(0);
         }
 
     }
