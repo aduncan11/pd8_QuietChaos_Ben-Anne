@@ -83,28 +83,32 @@ public class HistoryStory extends SchoolStory {
     }
 
     public void run(){
+	Random rand = new Random();
 	int score=0;
+	boolean solved;
 
-	for(int x=0;x<questions.size();x++){
-	    System.out.println(x+"/"+questions.size()+":");
+	for(int x=1;x<11;x++){
+	    System.out.println(x+"/"+10+":");
 	    delay();
+	    solved = false;
 
-	    int qnum=(int)Math.random()*questions.size();
+	    int qnum=rand.nextInt(11-x);
 	    System.out.println(questions.get(qnum));
 	    delay();
 	    for(int y=1;y<5;y++){
-		int answerNum=(int)Math.random()*(answers.get(qnum).length);
-		if(answers.get(qnum)[answerNum]==null){
-		    y--;
-		   
-		}
-		else {
+		int answerNum= rand.nextInt (5-y);
 		System.out.println(y+". "+answers.get(qnum)[answerNum]);
-		delay();
-		if(answerNum == 0) key[x]=y;
-		answers.get(qnum)[answerNum]=null;
+		if(answerNum == 0 && !solved) {
+		    key[x-1]=y;
+		    solved = true;
 		}
-	    }
+	        String temp = answers.get(qnum)[4-y];
+		answers.get(qnum)[4-y] = answers.get(qnum)[answerNum];
+		answers.get(qnum)[answerNum] = temp;
+		}
+
+	
+	
 	    System.out.println("(1, 2, 3, or 4)" + "\n");
 	    
 	    time=System.currentTimeMillis();
@@ -126,7 +130,7 @@ public class HistoryStory extends SchoolStory {
 	    }
 
 	    if(timeChange<5000){
-		if(Integer.parseInt(input)==key[x]) score++;
+		if(Integer.parseInt(input)==key[x-1]) score++;
 	    }	       
 
 	    questions.remove(qnum);
@@ -135,10 +139,10 @@ public class HistoryStory extends SchoolStory {
 	    System.out.println(((char) 27)+"[2J");
 	}
 
-	System.out.println("Score received: "+100.0*score/5.0);
+	System.out.println("Score received: "+100.0*score/10);
 	delay();
 
-	user.getTestScore(4*score/10);
+	user.getTestScore(4*score/5);
 
 	System.out.println("Hit enter to continue.");
 	Scanner sc=new Scanner(System.in);

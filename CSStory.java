@@ -28,7 +28,7 @@ public class CSStory extends SchoolStory{
 	answers.add(choices1);
 
 	//QUESTION 2
-	questions.add("Method that indicates how to create a new object)");	
+	questions.add("Method that indicates how to create a new object");	
         String[] choices2={"constructor","abstract","void","static"};
 	answers.add(choices2);
 
@@ -45,35 +45,40 @@ public class CSStory extends SchoolStory{
 	//QUESTION 5
 	questions.add("A method invoking itself is called");
         String[] choices5={"recursion","incursion","traversal","iteration"};
-	answers.add(choices4);
+	answers.add(choices5);
 
 	key=new int[5];
     }
 
     public void run(){
 	int score=0;
+	boolean solved;
+	Random rand = new Random();
 
-	for(int x=0;x<questions.size();x++){
-	    System.out.println(x+"/"+questions.size()+":");
+	for(int x=1;x<6;x++){
+	    solved = false;
+	    System.out.println(x+"/"+5+":");
 	    delay();
 
-	    int randQ=(int)Math.random()*questions.size();
+	    int randQ=rand.nextInt(6-x);;
 	    System.out.println(questions.get(randQ));
 	    delay();
 	    
-	    for(int y=0;y<4;y++){
-		int randA=(int)Math.random()*(answers.get(randQ).length);
-		if(answers.get(randQ)[randA]==null){
-		    y--;
+	    for(int y=1;y<5;y++){
+		int randA= rand.nextInt(5-y);
+	        
+		if(randA==0 && !solved) {
+		    key[x-1]=y;
+		    solved = true;
 		}
-		else{
-		    if(randA==0) key[x]=y;
-		    System.out.println(y+". "+answers.get(randQ)[randA]);
-		    // super.delay();
-		    answers.get(x)[randA]=null;
+		System.out.println(y+". "+answers.get(randQ)[randA]);
+		// super.delay();
+		String temp = answers.get(randQ)[4-y];
+		answers.get(randQ)[4-y] = answers.get(randQ)[randA];
+		answers.get(randQ)[randA] = temp;
 		}
 		System.out.println("(1, 2, 3, or 4)"+"\n");
-	    }
+	    
 	    
 	    prevTime=System.currentTimeMillis();
 
@@ -94,18 +99,20 @@ public class CSStory extends SchoolStory{
 	    }
 	    
 	    if(timeChange<5000){
-		if(Integer.parseInt(input)==key[x]) score++;
+	        
+		if(Integer.parseInt(input)==key[x-1]) score++;
 	    }
 
+	
 	    answers.remove(randQ);
 	    questions.remove(randQ);
 	    
 	    System.out.println(((char) 27)+"[2J");
-	    delay();
     
 	}
     
-	System.out.println("Score received: "+100.0*score/5.0);
+	System.out.println(score);
+	System.out.println("Score received: "+100.0*score/10);
 	delay();
 
 	user.getTestScore(score*4/5);

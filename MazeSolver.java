@@ -231,7 +231,7 @@ public class MazeSolver extends StoryBit{
 	    y = y - 1;
 	    maze [x][y] = HERO;
 
-	    System.out.println (x + " " + y);
+        
 	}
     }
 

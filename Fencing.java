@@ -48,28 +48,32 @@ public class Fencing extends StoryBit{
 
     public void run(){
 	int score=0;
+	boolean solved;
+	Random rand = new Random();
 
-	for(int x=0;x<Scenarios.size();x++){
-	    System.out.println(x+"/"+Scenarios.size()+":");
+	for(int x=1;x<5;x++){
+	    solved = false;
+	    System.out.println(x+"/"+4+":");
 	    delay();
 
-	    int randQ=(int)Math.random()*Scenarios.size();
+	    int randQ=rand.nextInt(5-x);
 	    System.out.println(Scenarios.get(randQ));
 	    delay();
 	    
-	    for(int y=0;y<4;y++){
-		int randA=(int)Math.random()*(Choices.get(randQ).length);
-		if(Choices.get(randQ)[randA]==null){
-		    y--;
+	    for(int y=1;y<5;y++){
+		int randA=rand.nextInt(5-y);
+	        
+		if(randA==0 && !solved) {
+		    key[x-1]=y;
+		    solved = true;
 		}
-		else{
-		    if(randA==0) key[x]=y;
 		    System.out.println(y+". "+Choices.get(randQ)[randA]);
-		    // super.delay();
-		    Choices.get(x)[randA]=null;
-		}
-		System.out.println("(1, 2, 3, or 4)"+"\n");
+		 String temp = Choices.get(randQ)[4-y];
+		Choices.get(randQ)[4-y] = Choices.get(randQ)[randA];
+		Choices.get(randQ)[randA] = temp;
 	    }
+		System.out.println("(1, 2, 3, or 4)"+"\n");
+	
 	    
 	    prevTime=System.currentTimeMillis();
 
@@ -90,18 +94,17 @@ public class Fencing extends StoryBit{
 	    }
 	    
 	    if(timeChange<5000){
-		if(Integer.parseInt(input)==key[x]) score++;
+		if(Integer.parseInt(input)==key[x-1]) score++;
 	    }
 
 	    Choices.remove(randQ);
 	    Scenarios.remove(randQ);
 	    
 	    System.out.println(((char) 27)+"[2J");
-	    delay();
     
 	}
     
-	System.out.println("Score received: "+100.0*score/5.0);
+	System.out.println("Score received: "+100.0*score/4.0);
 	delay();
 
 	user.setSocialLife (score - 2);

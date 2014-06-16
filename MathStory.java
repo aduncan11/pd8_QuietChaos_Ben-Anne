@@ -51,23 +51,28 @@ public class MathStory extends SchoolStory {
     }
 
     public void run(){
+	Random rand = new Random();
 	int score=0;
+	boolean solved;
 	
-	for(int x=0;x<5;x++){
-	    int randomQ=(int)Math.random()*(questions.size());
-	    System.out.println(answers.get(randomQ));
+	for(int x=1;x<6;x++){
+	    solved = false;
+	    System.out.println(x+ "/" + 5 + " :");
+	    int randomQ=rand.nextInt(6-x);
+	    System.out.println(questions.get(randomQ));
 	    delay();
-	    for(int y=0;y<4;y++){
-		int randomA=(int)Math.random()*(answers.get(randomQ).length);
-		if(answers.get(randomQ)[randomA]==null){
-		    y--;
+	    for(int y=1;y<5;y++){
+		int randomA=rand.nextInt(5-y);
+		System.out.println(y+". "+answers.get(randomQ)[randomA]);
+		if(randomA==0 && !solved) {
+		    key[x-1]=y;
+		    solved = true;
 		}
-		else {
-		System.out.println(randomA+". "+answers.get(randomQ)[randomA]);
-		if(randomA==0) key[x]=y;
-		answers.get(randomQ)[randomA]=null;
+	        String temp = answers.get(randomQ)[4-y];
+		answers.get(randomQ)[4-y] = answers.get(randomQ)[randomA];
+		answers.get(randomQ)[randomA] = temp;
 	    }
-	    }
+	    
 	    System.out.println("(1, 2, 3, or 4)"+"\n");
 
 	    System.out.println("You have 5 seconds.");
@@ -89,7 +94,7 @@ public class MathStory extends SchoolStory {
 	    }
 
             if(change<5000){
-		if(Integer.parseInt(input)==key[x]) score++;
+		if(Integer.parseInt(input)==key[x-1]) score++;
 	    }	    
 	   
 	    questions.remove(randomQ);

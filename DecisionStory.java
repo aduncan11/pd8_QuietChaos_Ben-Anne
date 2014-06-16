@@ -34,7 +34,7 @@ public class DecisionStory extends StoryBit{
 	Scanner scan=new Scanner(System.in);
 	String input="";
 	while(!(input.equals("sleep")||input.equals("study")||input.equals("hang out"))){
-	    input+=scan.nextLine().trim();
+	    input=scan.nextLine().trim();
 	}
 
 	if(input.equals("sleep")){

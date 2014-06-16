@@ -35,6 +35,25 @@ public class UserCharacter extends Character{
 	_loveInterest = null;
 	_friends = new PriorityQueue <ComputerCharacter> ();
 
+	ComputerCharacter c1 = new ComputerCharacter ();
+	ComputerCharacter c2 = new ComputerCharacter ();
+	ComputerCharacter c3 = new ComputerCharacter ();
+	ComputerCharacter c4 = new ComputerCharacter ();	
+	ComputerCharacter c5 = new ComputerCharacter ();
+	ComputerCharacter c6 = new ComputerCharacter ();
+	ComputerCharacter c7 = new ComputerCharacter ();
+	ComputerCharacter c8 = new ComputerCharacter ();
+
+	_friends.add(c1);
+	_friends.add(c2);
+	_friends.add(c3);
+	_friends.add(c4);
+	_friends.add(c5);
+	_friends.add(c6);
+	_friends.add(c7);
+	_friends.add(c8);
+
+
 	System.out.println ("Students at this school have three main characteristics that they try to balance - Their social status, their grades, and how much sleep they can get. Jocks have very good social status but bad grades. Nerds have good grades but bad social skills. Narcoleptics have a lot of sleep but bad social status.");
 	delay();
 

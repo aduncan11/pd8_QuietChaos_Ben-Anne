@@ -65,32 +65,9 @@ public class Driver{
         //variables for the whole game:                                                                        
         LinkedList<StoryBit> story=new LinkedList<StoryBit>();
         UserCharacter user=new UserCharacter();
-	/*
-        //construct the queue                                                                       
-        StoryBit[] storyBits = new StoryBit[11];
-        storyBits[0]=new SchoolStory(user);
-        storyBits[1]=new DecisionStory(user);
-        storyBits[2]=new SocialStory(user);
-        storyBits[3]=new DressingUp(user);
-        storyBits[4]=new SchoolStory(user);
-        storyBits[5]=new DecisionStory(user);
-        storyBits[6]=new Fencing(user);
-        storyBits[7]=new DecisionStory(user);
-        storyBits[8]=new SchoolStory(user);
-      storyBits[9]=new Fencing(user);
-        storyBits[10]=new DressingUp(user);
-        for(int x=0;x<storyBits.length;x++){
-            int randBit=(int)Math.random()*(storyBits.length - x);
-            if(storyBits[randBit]==null){
-                x--;
-            }
-            else{
-                story.add(storyBits[randBit]);
-                storyBits[randBit]=null;
-            }
 
-	    story.add(storyBits[x]);
-					    */
+	Random rand = new Random();
+
 
         ArrayList<StoryBit> storyBits = new ArrayList<StoryBit>();
         storyBits.add(new SchoolStory(user));
@@ -104,10 +81,10 @@ public class Driver{
         storyBits.add(new SchoolStory(user));
 	storyBits.add(new Fencing(user));
         storyBits.add(new DressingUp(user));
-	//        System.out.println(storyBits.length + " "+storyBits[0]);
-	for(int x=0;x<storyBits.size();x++){
-            int randBit=(int)Math.random()*(storyBits.size());
-	    //	    System.out.println(randBit + " " +storyBits.get(randBit));
+
+	for(int x=0;x<11;x++){
+            int randBit=rand.nextInt(11 - x);
+
 	    story.add(storyBits.get(randBit));
 	    storyBits.remove(randBit);
 
@@ -135,6 +112,7 @@ public class Driver{
         delay();
         System.out.println("Disengage Indiana Jones. Enter final countdown mode. \n"+"http://tinyurl.com/pgb2crl");
         delay();
+	System.out.println("Hit enter");
         input="nothing";
         while(input.length()>0){
             input=sc.nextLine().trim();

@@ -45,35 +45,44 @@ public class DressingUp extends StoryBit{
 	//QUESTION 5
 	questions.add("Do you want to accesorize?");
         String[] choices5={"Gold Necklace","No","God No","A Fishnet"};
-	answers.add(choices4);
+	answers.add(choices5);
 
 	key=new int[5];
     }
 
     public void run(){
 	int score=0;
+	Random rand = new Random();
+	boolean solved;
 
-	for(int x=0;x<questions.size();x++){
-	    System.out.println(x+"/"+questions.size()+":");
+	for(int x=1;x<6;x++){
+	    System.out.println(x+"/"+5+":");
 	    delay();
+	    solved = false;
 
-	    int randQ=(int)Math.random()*questions.size();
+	    int randQ=rand.nextInt(6-x);
 	    System.out.println(questions.get(randQ));
 	    delay();
 	    
-	    for(int y=0;y<4;y++){
-		int randA=(int)Math.random()*(answers.get(randQ).length);
-		if(answers.get(randQ)[randA]==null){
-		    y--;
+	    for(int y=1;y<5;y++){
+		int randA=rand.nextInt(5-y);
+
+        
+		if(randA==0 && !solved) {
+		    key[x-1]=y;
+		    solved = true;
 		}
-		else{
-		    if(randA==0) key[x]=y;
-		    System.out.println(y+". "+answers.get(randQ)[randA]);
-		    // super.delay();
-		    answers.get(x)[randA]=null;
-		}
-		System.out.println("(1, 2, 3, or 4)"+"\n");
+
+		System.out.println(y+". "+answers.get(randQ)[randA]);
+
+		String temp = answers.get(randQ)[4-y];
+		answers.get(randQ)[4-y] = answers.get(randQ)[randA];
+		answers.get(randQ)[randA] = temp;
+		  
+
 	    }
+		System.out.println("(1, 2, 3, or 4)"+"\n");
+	    
 	    
 	    prevTime=System.currentTimeMillis();
 
@@ -94,14 +103,13 @@ public class DressingUp extends StoryBit{
 	    }
 	    
 	    if(timeChange<5000){
-		if(Integer.parseInt(input)==key[x]) score++;
+		if(Integer.parseInt(input)==key[x-1]) score++;
 	    }
 
 	    answers.remove(randQ);
 	    questions.remove(randQ);
 	    
 	    System.out.println(((char) 27)+"[2J");
-	    delay();
     
 	}
     
