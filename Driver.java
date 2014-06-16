@@ -65,9 +65,8 @@ public class Driver{
         //variables for the whole game:                                                                        
         LinkedList<StoryBit> story=new LinkedList<StoryBit>();
         UserCharacter user=new UserCharacter();
-
-        //construct the queue                                                                                  
-<<<<<<< HEAD
+	/*
+        //construct the queue                                                                       
         StoryBit[] storyBits = new StoryBit[11];
         storyBits[0]=new SchoolStory(user);
         storyBits[1]=new DecisionStory(user);
@@ -80,7 +79,7 @@ public class Driver{
         storyBits[8]=new SchoolStory(user);
       storyBits[9]=new Fencing(user);
         storyBits[10]=new DressingUp(user);
-        for(int x=0;x<storyBits.length;x++){/*
+        for(int x=0;x<storyBits.length;x++){
             int randBit=(int)Math.random()*(storyBits.length - x);
             if(storyBits[randBit]==null){
                 x--;
@@ -88,11 +87,11 @@ public class Driver{
             else{
                 story.add(storyBits[randBit]);
                 storyBits[randBit]=null;
-            }*/
+            }
 
 	    story.add(storyBits[x]);
+					    */
 
-=======
         ArrayList<StoryBit> storyBits = new ArrayList<StoryBit>();
         storyBits.add(new SchoolStory(user));
         storyBits.add(new DecisionStory(user));
@@ -111,7 +110,7 @@ public class Driver{
 	    //	    System.out.println(randBit + " " +storyBits.get(randBit));
 	    story.add(storyBits.get(randBit));
 	    storyBits.remove(randBit);
->>>>>>> 3e693e77e79a3284c79e6c9573ca0782fd7a14ab
+
         }
 
         //traverse through queue and run the story...                                                          
@@ -198,4 +197,5 @@ public class Driver{
         }
 
     }
+
 }
