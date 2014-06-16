@@ -198,6 +198,10 @@ class MazeSolver {
 
 	if (!solved) {
 	System.out.println ("Times up! You're late to class!");
+	System.out.println("You're GPA has gone down one.");
+	user.setGrade(-1);
+	delay (500);
+	System.out.println("Your GPA is now: " + user.getGrades());
 	}
     }
 
