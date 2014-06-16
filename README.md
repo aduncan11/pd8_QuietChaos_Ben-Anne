@@ -53,3 +53,14 @@ MiniGames:
   3. Dressing
   -Everybody hates fashion, but the truth is, it's important to look nice. Every morning you have to pick out your attire for the day, but make sure you pick wisely! One wrong blunder and your social status will take a huge blow. 
   
+
+
+
+
+
+To Play:
+
+1. Clone this repo.
+2. javac *.java
+3. java Driver
+4. Have fun!
