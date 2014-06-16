@@ -96,12 +96,14 @@ public class HistoryStory extends SchoolStory {
 		int answerNum=(int)Math.random()*(answers.get(qnum).length);
 		if(answers.get(qnum)[answerNum]==null){
 		    y--;
-		    break;
+		   
 		}
+		else {
 		System.out.println(y+". "+answers.get(qnum)[answerNum]);
 		delay();
 		if(answerNum == 0) key[x]=y;
 		answers.get(qnum)[answerNum]=null;
+		}
 	    }
 	    System.out.println("(1, 2, 3, or 4)" + "\n");
 	    

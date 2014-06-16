@@ -111,7 +111,7 @@ public class MazeSolver extends StoryBit{
 	     maze[x][y] = HERO;
 	}
 
-	System.out.println ("You are about to take a journey to your next class. You are going to ________" + "\n");//(we need to just write this separately for each one).
+	System.out.println ("You are about to take a journey to your next class." + "\n");//(we need to just write this separately for each one).
 	
 	delay (2000);
 

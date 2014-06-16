@@ -61,13 +61,13 @@ public class MathStory extends SchoolStory {
 		int randomA=(int)Math.random()*(answers.get(randomQ).length);
 		if(answers.get(randomQ)[randomA]==null){
 		    y--;
-		    break;
 		}
+		else {
 		System.out.println(randomA+". "+answers.get(randomQ)[randomA]);
 		if(randomA==0) key[x]=y;
 		answers.get(randomQ)[randomA]=null;
 	    }
-
+	    }
 	    System.out.println("(1, 2, 3, or 4)"+"\n");
 
 	    System.out.println("You have 5 seconds.");
