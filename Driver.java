@@ -33,11 +33,11 @@ public class Driver{
          System.out.println(((char) 27)+"[2J");
 
         System.out.println("Welcome to Surviving Stuyvesant High School! Ben and Anne here.");
-        delay();
+        delay(1.0);
         System.out.println("We could ask you for your name, but that can wait. For now we will call you Stan."
 );
-        delay(4.0);
-        System.out.println("Well, Stan, we hear you are a student at Stuyvesant High School, and while you are an upperclassman taking classes like APCS, and attending glamorous galas like JProm, you are still a little confused on how to handle this whole... scool thing.");
+        delay();
+        System.out.println("Well, Stan, we hear you are a student at Stuyvesant High School, and while you are an upperclassman taking classes like APCS, and attending glamorous galas like JProm, you are still a little confused on how to handle this whole... school thing.");
         delay(4.0);
         System.out.println("You don't have your life all figured out? Stan, where have you been all this time?");
         delay(4.0);
@@ -56,8 +56,10 @@ public class Driver{
             input=sc.nextLine().trim();
         }
 
-        System.out.println(((char) 27)+"[2J");
+	
+	System.out.println(((char) 27)+"[2J");
 
+       
         //SETUP                                                                                                
 
         //variables for the whole game:                                                                        
@@ -65,27 +67,24 @@ public class Driver{
         UserCharacter user=new UserCharacter();
 
         //construct the queue                                                                                  
-        StoryBit[] storyBits = new StoryBit[11];
-        storyBits[0]=new SchoolStory(user);
-        storyBits[1]=new DecisionStory(user);
-        storyBits[2]=new SocialStory(user);
-        storyBits[3]=new DressingUp(user);
-        storyBits[4]=new SchoolStory(user);
-        storyBits[5]=new DecisionStory(user);
-        storyBits[6]=new Fencing(user);
-        storyBits[7]=new DecisionStory(user);
-        storyBits[8]=new SchoolStory(user);
-      storyBits[9]=new Fencing(user);
-        storyBits[10]=new DressingUp(user);
-        for(int x=0;x<storyBits.length;x++){
-            int randBit=(int)Math.random()*(storyBits.length - x);
-            if(storyBits[randBit]==null){
-                x--;
-            }
-            else{
-                story.add(storyBits[randBit]);
-                storyBits[randBit]=null;
-            }
+        ArrayList<StoryBit> storyBits = new ArrayList<StoryBit>();
+        storyBits.add(new SchoolStory(user));
+        storyBits.add(new DecisionStory(user));
+        storyBits.add(new SocialStory(user));
+        storyBits.add(new DressingUp(user));
+        storyBits.add(new SchoolStory(user));
+        storyBits.add(new DecisionStory(user));
+        storyBits.add(new Fencing(user));
+        storyBits.add(new DecisionStory(user));
+        storyBits.add(new SchoolStory(user));
+	storyBits.add(new Fencing(user));
+        storyBits.add(new DressingUp(user));
+	//        System.out.println(storyBits.length + " "+storyBits[0]);
+	for(int x=0;x<storyBits.size();x++){
+            int randBit=(int)Math.random()*(storyBits.size());
+	    //	    System.out.println(randBit + " " +storyBits.get(randBit));
+	    story.add(storyBits.get(randBit));
+	    storyBits.remove(randBit);
         }
 
         //traverse through queue and run the story...                                                          
