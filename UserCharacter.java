@@ -41,7 +41,7 @@ public class UserCharacter extends Character{
 	System.out.println ("What is your status as a student? \n Type (1) for Jock, (2) for Nerd, and (3) for Narcoleptic");
 
 	input = "";
-	while (!(input.equals ("1")) || (input.equals ("2")) || (input.equals ("3"))) {
+	while (!(input.equals ("1") || input.equals ("2") || input.equals ("3"))) {
 	    input = scan.nextLine().trim();
 	}
 	delay(0.5);
